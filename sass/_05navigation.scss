@@ -16,7 +16,7 @@
 		border: none;
 		color: $light;
 		display: block;
-		@include rem(padding, 28px 24px);
+		@include rem(padding, 55px 14px);
 		position: relative;
 
 		&:hover {
@@ -112,7 +112,7 @@
 
 .nav-primary a:hover,
 .nav-primary .current-menu-item > a {
-	color: #fff;
+	font-weight:bold;
 }
 
 .nav-primary .sub-menu a {
@@ -253,3 +253,11 @@
 		clear: both;
 	}
 
+.nav-primary{
+	background-color:#fff !important;
+}
+nav.nav-primary {
+    max-width: 586px;
+    float: left;
+	
+}

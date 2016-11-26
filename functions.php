@@ -44,9 +44,10 @@ function gs_theme_setup() {
 	//add_theme_support( 'custom-background' );
 
 	// Enable Custom Header
-	//add_theme_support('genesis-custom-header');
-
-
+	add_theme_support('genesis-custom-header',array(
+		'width' => 521,
+		'height' => 66
+	));
 	// Add support for structural wraps
 	add_theme_support( 'genesis-structural-wraps', array(
 		'header',
@@ -73,7 +74,7 @@ function gs_theme_setup() {
 		'genesis-menus', 
 		array(
 			'primary'   => __( 'Primary Navigation Menu', CHILD_DOMAIN ), 
-			'secondary' => __( 'Secondary Navigation Menu', CHILD_DOMAIN ),
+		//	'secondary' => __( 'Secondary Navigation Menu', CHILD_DOMAIN ),
 			'footer'    => __( 'Footer Navigation Menu', CHILD_DOMAIN ),
 			'mobile'    => __( 'Mobile Navigation Menu', CHILD_DOMAIN ),
 		)
@@ -95,8 +96,25 @@ function gs_theme_setup() {
 	
 	// Register Sidebars
 	gs_register_sidebars();
+
+	//* Reposition the primary navigation menu
+	remove_action( 'genesis_after_header', 'genesis_do_nav' );
+	add_action( 'genesis_header', 'genesis_do_nav', 12 );
+	add_filter( 'genesis_seo_title', 'child_header_title', 10, 3 );
+
+
+	
+
+
 	
 } // End of Set Up Function
+
+//* Modify the header URL - HTML5 Version
+function child_header_title( $title, $inside, $wrap ) {
+    $inside = sprintf( '<a href="http://example.com/" title="%s"><img alt="" src="' . get_stylesheet_directory_uri() . '/images/logo.png" /></a>', esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
+    return sprintf( '<%1$s class="site-title">%2$s</%1$s>', $wrap, $inside );
+}
+
 
 // Register Sidebars
 function gs_register_sidebars() {

@@ -26,8 +26,7 @@
 	line-height: 1.25;
 	color: $color-extra;
 }
-
-
+	
 .header-full-width .site-title,
 .header-full-width .site-title a,
 .header-full-width .title-area {
@@ -52,4 +51,12 @@
 	float: right;
 	@include rem(margin-top, 56px);
 	width: 100%;
+}
+
+//added
+.header-full-width .site-title,.header-full-width .title-area{
+	max-width:521px;
+	float: left;
+	margin-left: 0;
+	clear:both;	
 }
