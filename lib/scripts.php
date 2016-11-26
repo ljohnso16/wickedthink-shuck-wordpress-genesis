@@ -73,6 +73,8 @@ function gs_register_scripts() {
 	
 	/** Common, site specific */
 	wp_register_script( 'gs-common', CHILD_JS . '/' . gs_script_suffix( 'common' ), array( 'jquery' ) , CHILD_THEME_VERSION );
+
+	//wp_register_script('typekit','https://use.typekit.net/usm0rds.js',NULL,NULL,NULL);
 	
 }
 
@@ -101,7 +103,9 @@ function gs_enqueue_scripts() {
 	//wp_enqueue_script( 'gs-pretty-photo' );
 	//add_action( 'wp_footer', 'gs_init_pretty_photo' );
 	//wp_enqueue_script( 'gs-animate' );
+	wp_enqueue_script( 'typekit' );
 	wp_enqueue_script( 'gs-common' );
+
 	
 	// Localize Script
 	/*
