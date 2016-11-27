@@ -159,6 +159,10 @@ a img {
 
 .wrap {
   margin: 0 auto;
+}
+
+header.site-header div.wrap, .site-inner div.wrap {
+  margin: 0 auto;
   max-width: 1152px;
 }
 
@@ -513,7 +517,7 @@ h6,
 }
 .genesis-nav-menu a {
   border: none;
-  color: #fff;
+  color: #28315D;
   display: block;
   padding: 55px 14px;
   padding: 5.5rem 1.4rem;
@@ -601,7 +605,6 @@ h6,
   background-color: #3B3D42;
 }
 
-.nav-primary a:hover,
 .nav-primary .current-menu-item > a {
   font-weight: bold;
 }
@@ -745,6 +748,10 @@ h6,
 nav.nav-primary {
   max-width: 586px;
   float: left;
+}
+
+nav#footer-nav {
+  text-align: center;
 }
 
 /*
@@ -1037,6 +1044,24 @@ Site Footer
 
 .site-footer ul.menu-footer a {
   padding: 0rem .75rem;
+}
+
+span.footer-address {
+  display: block;
+}
+
+a.footer-logo {
+  width: 252px;
+  display: block;
+  margin: 0px auto;
+}
+
+.site-footer .wrap {
+  background-image: url("images/building-overlay.jpg");
+}
+
+a.footer-logo, span.footer-address, .site-footer, span.footer-copyright a, ul#menu-footer li.menu-item a {
+  color: #fff;
 }
 
 /*********************************************************************************************

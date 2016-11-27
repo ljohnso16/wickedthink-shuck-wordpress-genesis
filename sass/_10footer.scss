@@ -63,3 +63,18 @@ Site Footer
 	.site-footer ul.menu-footer a {
 	  padding: 0rem .75rem;
 	}
+
+span.footer-address {
+    display: block;
+}
+a.footer-logo {
+    width: 252px;
+    display: block;
+    margin: 0px auto;
+}
+.site-footer .wrap{
+	background-image:url('images/building-overlay.jpg');
+}
+a.footer-logo, span.footer-address,.site-footer,span.footer-copyright a,ul#menu-footer li.menu-item a{
+	color:#fff;
+}

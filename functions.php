@@ -102,7 +102,11 @@ function gs_theme_setup() {
 	add_action( 'genesis_header', 'genesis_do_nav', 12 );
 	add_filter( 'genesis_seo_title', 'child_header_title', 10, 3 );
 
-
+	add_action('genesis_footer', 'smb_footer', 5);
+	function smb_footer() {
+		add_footer_logo();
+		footer_menu();
+	}
 	
 
 
@@ -181,7 +185,17 @@ function gs_mobile_navigation() {
 	
 	gs_navigation( 'mobile', $mobile_menu_args );
 }
-
+function add_footer_logo(){
+	$footer_logo = '<a href="/" class="footer-logo"><img alt="" src="' . get_stylesheet_directory_uri() . '/images/logo-footer.png" /></a>';
+	echo $footer_logo;
+}
+// Add footer menu
+function footer_menu() {
+	$footer_menu_args = array(
+		'echo' => true,
+	);
+	gs_navigation( 'footer', $footer_menu_args );
+}
 // Add Widget Area After Post
 add_action('genesis_after_entry', 'gs_do_after_entry');
 function gs_do_after_entry() {
@@ -195,3 +209,9 @@ function gs_do_after_entry() {
         );
  }
  }
+ add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
+function sp_footer_creds_filter( $creds ) {
+	$location = '<span class="footer-address">2 N. Cascade Avenue, Ste. 1280, Colorado Springs, CO 80903 </span>';
+	$creds = $location . '<span class="footer-copyright">Copyright [footer_copyright] Shuck Communities&trade;. <a href="#">Privacy Statement</a></span>';
+	return $creds;
+}

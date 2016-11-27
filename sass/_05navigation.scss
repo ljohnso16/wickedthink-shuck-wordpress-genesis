@@ -14,7 +14,7 @@
 
 	a {
 		border: none;
-		color: $light;
+		color: $color-cta;
 		display: block;
 		@include rem(padding, 55px 14px);
 		position: relative;
@@ -110,7 +110,6 @@
 	background-color: $color-extra;
 }
 
-.nav-primary a:hover,
 .nav-primary .current-menu-item > a {
 	font-weight:bold;
 }
@@ -260,4 +259,7 @@ nav.nav-primary {
     max-width: 586px;
     float: left;
 	
+}
+nav#footer-nav{
+	text-align:center;
 }
