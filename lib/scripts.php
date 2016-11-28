@@ -31,7 +31,7 @@ function gs_register_scripts() {
 	 * @link http://www.bootstrapcdn.com/?v=10292012225705
 	 * @link http://twitter.github.com/bootstrap/
 	 */
-	wp_register_style( 'gs-twitter-bootstrap', CHILD_CSS . '/' . gs_script_suffix( 'bootstrap', 'css' ), array(), '3.0.3' );
+	wp_register_style( 'gs-twitter-bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '3.3.7' );
 	//wp_register_style( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/css/bootstrap-combined.min.css', array(), '3.0.3' );
 	
 	// Twitter Bootstrap CSS (Font Awesome version)
@@ -43,7 +43,7 @@ function gs_register_scripts() {
 	 * @link http://twitter.github.com/bootstrap/
 	 */
 	//wp_register_script( 'gs-twitter-bootstrap', CHILD_JS . '/' . gs_script_suffix( 'bootstrap', 'js' ), array( 'jquery' ), '3.0.3' );
-	wp_register_script( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/js/bootstrap.min.js', array( 'jquery' ), '3.0.3' );
+	wp_register_script( 'gs-twitter-bootstrap-cdn', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', array( 'jquery' ), '3.3.7' );
 	
 	/**
 	 * Font Awesome

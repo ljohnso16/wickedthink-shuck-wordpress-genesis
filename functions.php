@@ -262,8 +262,9 @@ function generate_testimonial_slider(){
     $query = new WP_Query( $args );
     $quote_icon_url = get_stylesheet_directory_uri().'/images/right-side-quote.png';
     $posts = '<div class="wrap">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-	    <!-- Wrapper for slides -->
+    
+    <div id="testimonail-slider" class="carousel slide" data-interval="3000" data-ride="carousel">
+
 	    <div class="carousel-inner" role="listbox">';
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
             $post_id = get_the_ID();
@@ -271,20 +272,26 @@ function generate_testimonial_slider(){
             $companyname = types_render_field('cname', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
             $fnamelname = types_render_field('fname-lname', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
 
-			if($i=0){
+			if($i==0){
 				$posts .='<div class="item active">';
 			}
 			else{
 				$posts .='<div class="item">';
+			}            
+            if(!empty($content)){
+	            $posts .='            
+			    	   <img src="'.$quote_icon_url.'" alt="Testimonial" width="115" height="115">';
+			    	   /*$posts .='<div class="carousel-caption">
+			        	
+				        <p class="excerpt">'.$content.'</p>';
+				        if(!empty($fnamelname)){
+				        	$posts .='<h4>'.$fnamelname.'</h4>';
+				        }
+				        if(!empty($fnamelname)){
+				        	$posts .='<h4>'.$companyname.'</h4>';
+				        }*/
+			    $posts.='</div>';
 			}
-            $posts .='            
-		        <div class="carousel-caption">
-		        	<img src="'.$quote_icon_url.'" alt="Testimonial" width="115" height="115">
-			        <p class="excerpt">'.$content.'</p>
-			        <h4>'.$fnamelname.'</h4>        
-			        <h4>'.$companyname.'</h4>        
-		    	</div>
-		    </div>';
             $i++;
         endwhile;
         wp_reset_postdata();
