@@ -95,7 +95,7 @@ function gs_enqueue_scripts() {
 	 *   Only activate it if you wish to purely use all of the Bootstrap Styles and Font Awesome Together */
 	//wp_enqueue_style( 'gs-twitter-bootstrap-font-awesome' );
 	
-	wp_enqueue_style( 'gs-font-awesome-cdn' );
+	//wp_enqueue_style( 'gs-font-awesome-cdn' );
 	//wp_enqueue_style( 'gs-pretty-photo' );
 	
 	// Scripts
@@ -103,8 +103,10 @@ function gs_enqueue_scripts() {
 	//wp_enqueue_script( 'gs-pretty-photo' );
 	//add_action( 'wp_footer', 'gs_init_pretty_photo' );
 	//wp_enqueue_script( 'gs-animate' );
+	wp_enqueue_script( 'gs-twitter-bootstrap-cdn' );
 	wp_enqueue_script( 'typekit' );
 	wp_enqueue_script( 'gs-common' );
+
 
 	
 	// Localize Script

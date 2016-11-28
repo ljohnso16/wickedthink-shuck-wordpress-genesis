@@ -162,9 +162,13 @@ function gs_register_sidebars() {
 			'id'			=> 'footer-call-action',
 			'name'			=> __( 'Call to Action Footer', CHILD_DOMAIN ),
 			'description'	=> __( 'This will show up before the footer.Default: Call to Action.', CHILD_DOMAIN ),
+		),		
+		array(
+			'id'			=> 'testimonail-slider-area',
+			'name'			=> __( 'Testimonail Slider Area', CHILD_DOMAIN ),
+			'description'	=> __( 'This will show up before the footer.', CHILD_DOMAIN ),
 		)		
 	);
-	
 	foreach ( $sidebars as $sidebar )
 		genesis_register_sidebar( $sidebar );
 }
@@ -222,7 +226,7 @@ function sp_footer_creds_filter( $creds ) {
 }
 
 // Add Widget Area Before Footer
-add_action('genesis_before_footer', 'gs_do_before_footer');
+add_action('genesis_before_footer', 'gs_do_before_footer', 10);
 function gs_do_before_footer() {
  	
  	genesis_widget_area( 
@@ -233,33 +237,57 @@ function gs_do_before_footer() {
                 ) 
         );
  	
- 
  }
-// add_shortcode('testimonail-slider','generate_testimonial_slider');
-// function generate_testimonial_slider(){
-//     $args = array(
-//         'post_type' => 'testimonail',
-//     	'posts_per_page' => 3
-//     );
-//     $i = 0;
-//     $query = new WP_Query( $args );
-//     if($query->have_posts()):while($query->have_posts()):$query->the_post();
-//             $post_id = get_the_ID();
-//             $post_excerpt = types_render_field('excerpt', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
-//             //$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail_size' );
-//             $thumbnail_url = $thumbnail['0'] ? $thumbnail['0'] : '/wp-content/themes/NewHomeDream/images/default-post-thumbnail.png';
-//             $posts .= "
-//             <section class='excerpt row' id='excerpt-" . $i . "'>
-//             	<header class='excerpt-header' style='background-image:url(\"$thumbnail_url\");'><h2>" .
-//             	$post_title .
-//             	"</h2><span class='excerpt-date'>" .
-//             	$post_date .
-//             	"</span></header><article class='excerpt-content'>" .
-//             	$post_excerpt .
-//             	"<a class='learn'>LEARN MORE</a></article></section>";
-//             $i++;
-//         endwhile;
-//         wp_reset_postdata();
-//     endif;
-//     return $posts;
-// }
+
+add_action('genesis_before_footer', 'gs_do_before_footer_2', 9);
+function gs_do_before_footer_2() {
+ 	
+ 	genesis_widget_area( 
+                'testimonail-slider-area', 
+                array(
+                        'before' => '<div id="testimonail-slider-area"><div class="testimonail-slider-area widget-area">', 
+                        'after' => '</div></div>',
+                ) 
+        );
+ 	
+ }
+
+add_shortcode('testimonail-slider','generate_testimonial_slider');
+function generate_testimonial_slider(){
+    $args = array(
+        'post_type' => 'testimonial',
+    	'posts_per_page' => 2
+    );
+    $i = 0;
+    $query = new WP_Query( $args );
+    $quote_icon_url = get_stylesheet_directory_uri().'/images/right-side-quote.png';
+    $posts = '<div class="wrap">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+	    <!-- Wrapper for slides -->
+	    <div class="carousel-inner" role="listbox">';
+    if($query->have_posts()):while($query->have_posts()):$query->the_post();
+            $post_id = get_the_ID();
+            $content = get_the_content();
+            $companyname = types_render_field('cname', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
+            $fnamelname = types_render_field('fname-lname', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
+
+			if($i=0){
+				$posts .='<div class="item active">';
+			}
+			else{
+				$posts .='<div class="item">';
+			}
+            $posts .='            
+		        <div class="carousel-caption">
+		        	<img src="'.$quote_icon_url.'" alt="Testimonial" width="115" height="115">
+			        <p class="excerpt">'.$content.'</p>
+			        <h4>'.$fnamelname.'</h4>        
+			        <h4>'.$companyname.'</h4>        
+		    	</div>
+		    </div>';
+            $i++;
+        endwhile;
+        wp_reset_postdata();
+    endif;
+    return $posts;
+}
