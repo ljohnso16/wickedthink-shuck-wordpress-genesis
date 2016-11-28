@@ -37,13 +37,25 @@
 
 	//
 
-.carousel{
-    background: #2f4357;
-    margin-top: 20px;
-}
-.carousel .item img{
-    margin: 0 auto; /* Align slide image horizontally center */
-}
-.bs-example{
-	margin: 20px;
+
+div#testimonial-slider {
+   background: #2f4357;
+	div.item img{
+	    margin: 0 auto;
+	}
+	.carousel-caption{
+		padding: 0px !important;
+		bottom: 0px !important;
+		.excerpt{
+			margin-bottom: 20px !important;
+		}
+		p{
+			color: #fff !important;
+			margin: 0px !important;
+		}		
+	}
+	div.item{
+		height: 230px;
+	}
+
 }

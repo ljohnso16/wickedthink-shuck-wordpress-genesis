@@ -31,6 +31,7 @@ function gs_register_scripts() {
 	 * @link http://www.bootstrapcdn.com/?v=10292012225705
 	 * @link http://twitter.github.com/bootstrap/
 	 */
+
 	wp_register_style( 'gs-twitter-bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), '3.3.7' );
 	//wp_register_style( 'gs-twitter-bootstrap-cdn', '//netdna.bootstrapcdn.com/twitter-bootstrap/3.0.3/css/bootstrap-combined.min.css', array(), '3.0.3' );
 	
@@ -89,7 +90,7 @@ function gs_enqueue_scripts() {
 	// See gs_register_scripts() for examples.
 	
 	// Styles
-	wp_enqueue_style( 'gs-twitter-bootstrap' );
+	//wp_enqueue_style( 'gs-twitter-bootstrap' );
 	
 	/**  gs-twitter-bootstrap-font-awesome will overwrite most of the styles in the style sheet.
 	 *   Only activate it if you wish to purely use all of the Bootstrap Styles and Font Awesome Together */

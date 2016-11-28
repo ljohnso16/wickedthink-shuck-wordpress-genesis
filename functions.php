@@ -1,6 +1,6 @@
 <?php
 
-/**
+/** 
  * Custom amendments for the theme.
  *
  * @category   Genesis_Sandbox
@@ -84,7 +84,7 @@ function gs_theme_setup() {
 	add_action( 'genesis_before', 'gs_mobile_navigation', 5 );
 	
 	//Enqueue Sandbox Scripts
-	add_action( 'wp_enqueue_scripts', 'gs_enqueue_scripts' );
+	add_action( 'wp_enqueue_scripts', 'gs_enqueue_scripts', 1 );
 	
 	/**
 	 * 13 Editor Styles
@@ -164,8 +164,8 @@ function gs_register_sidebars() {
 			'description'	=> __( 'This will show up before the footer.Default: Call to Action.', CHILD_DOMAIN ),
 		),		
 		array(
-			'id'			=> 'testimonail-slider-area',
-			'name'			=> __( 'Testimonail Slider Area', CHILD_DOMAIN ),
+			'id'			=> 'testimonial-slider-area',
+			'name'			=> __( 'testimonial Slider Area', CHILD_DOMAIN ),
 			'description'	=> __( 'This will show up before the footer.', CHILD_DOMAIN ),
 		)		
 	);
@@ -243,16 +243,16 @@ add_action('genesis_before_footer', 'gs_do_before_footer_2', 9);
 function gs_do_before_footer_2() {
  	
  	genesis_widget_area( 
-                'testimonail-slider-area', 
+                'testimonial-slider-area', 
                 array(
-                        'before' => '<div id="testimonail-slider-area"><div class="testimonail-slider-area widget-area">', 
+                        'before' => '<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area">', 
                         'after' => '</div></div>',
                 ) 
         );
  	
  }
 
-add_shortcode('testimonail-slider','generate_testimonial_slider');
+add_shortcode('testimonial-slider','generate_testimonial_slider');
 function generate_testimonial_slider(){
     $args = array(
         'post_type' => 'testimonial',
@@ -263,7 +263,7 @@ function generate_testimonial_slider(){
     $quote_icon_url = get_stylesheet_directory_uri().'/images/right-side-quote.png';
     $posts = '<div class="wrap">
     
-    <div id="testimonail-slider" class="carousel slide" data-interval="3000" data-ride="carousel">
+    <div id="testimonial-slider" class="carousel slide" data-interval="3000" data-ride="carousel">
 
 	    <div class="carousel-inner" role="listbox">';
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
@@ -280,17 +280,17 @@ function generate_testimonial_slider(){
 			}            
             if(!empty($content)){
 	            $posts .='            
-			    	   <img src="'.$quote_icon_url.'" alt="Testimonial" width="115" height="115">';
-			    	   /*$posts .='<div class="carousel-caption">
+			    	   <img src="'.$quote_icon_url.'" alt="Testimonial" width="115" height="115">
+			    	   <div class="carousel-caption">
 			        	
 				        <p class="excerpt">'.$content.'</p>';
 				        if(!empty($fnamelname)){
-				        	$posts .='<h4>'.$fnamelname.'</h4>';
+				        	$posts .='<p>'.$fnamelname.'</p>';
 				        }
 				        if(!empty($fnamelname)){
-				        	$posts .='<h4>'.$companyname.'</h4>';
-				        }*/
-			    $posts.='</div>';
+				        	$posts .='<p>'.$companyname.'</p>';
+				        }
+			    $posts.='</div></div>';
 			}
             $i++;
         endwhile;
