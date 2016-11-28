@@ -74,7 +74,7 @@ function gs_register_scripts() {
 	/** Common, site specific */
 	wp_register_script( 'gs-common', CHILD_JS . '/' . gs_script_suffix( 'common' ), array( 'jquery' ) , CHILD_THEME_VERSION );
 
-	//wp_register_script('typekit','https://use.typekit.net/usm0rds.js',NULL,NULL,NULL);
+	wp_register_script('typekit','https://use.typekit.net/usm0rds.js',NULL,NULL,NULL);
 	
 }
 

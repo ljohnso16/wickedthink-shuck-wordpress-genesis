@@ -95,8 +95,8 @@ body {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.8;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  font-family: "source-sans-pro", sans-serif;
+  color: #8E8E8E;
 }
 
 p.pages,
@@ -354,8 +354,9 @@ h6,
   line-height: 1.2;
   margin-bottom: 16px;
   margin-bottom: 1.6rem;
-  font-family: Arimo, Varela, sans-serif;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
   font-weight: 700;
+  color: #28315D !important;
 }
 
 h1,
@@ -426,6 +427,10 @@ h6,
   margin-bottom: 2.4rem;
 }
 
+.textwidget, h4.widget-title.widgettitle {
+  text-align: center;
+}
+
 /*********************************************************************************************
 
             LAYOUT
@@ -446,7 +451,7 @@ h6,
   margin: 4rem 0 0.8rem;
   font-size: 48px;
   font-size: 4.8rem;
-  font-family: Arimo, Varela, sans-serif;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
   font-weight: 700;
 }
 .site-title a {
@@ -505,7 +510,7 @@ h6,
 .genesis-nav-menu {
   clear: both;
   color: #fff;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "source-sans-pro", sans-serif;
   letter-spacing: 1px;
   letter-spacing: 0.1rem;
   line-height: 1.5;
@@ -782,7 +787,7 @@ nav#footer-nav {
   margin-left: 1.6rem;
   padding-left: 20px;
   padding-left: 2rem;
-  color: #333;
+  color: #8E8E8E;
 }
 
 .entry-categories,

@@ -158,6 +158,11 @@ function gs_register_sidebars() {
 			'name'			=> __( 'After Post', CHILD_DOMAIN ),
 			'description'	=> __( 'This will show up after every post.', CHILD_DOMAIN ),
 		),
+		array(
+			'id'			=> 'footer-call-action',
+			'name'			=> __( 'Call to Action Footer', CHILD_DOMAIN ),
+			'description'	=> __( 'This will show up before the footer.Default: Call to Action.', CHILD_DOMAIN ),
+		)		
 	);
 	
 	foreach ( $sidebars as $sidebar )
@@ -215,3 +220,46 @@ function sp_footer_creds_filter( $creds ) {
 	$creds = $location . '<span class="footer-copyright">Copyright [footer_copyright] Shuck Communities&trade;. <a href="#">Privacy Statement</a></span>';
 	return $creds;
 }
+
+// Add Widget Area Before Footer
+add_action('genesis_before_footer', 'gs_do_before_footer');
+function gs_do_before_footer() {
+ 	
+ 	genesis_widget_area( 
+                'footer-call-action', 
+                array(
+                        'before' => '<div id="footer-call-action"><div class="footer-call-action widget-area">', 
+                        'after' => '</div></div>',
+                ) 
+        );
+ 	
+ 
+ }
+// add_shortcode('testimonail-slider','generate_testimonial_slider');
+// function generate_testimonial_slider(){
+//     $args = array(
+//         'post_type' => 'testimonail',
+//     	'posts_per_page' => 3
+//     );
+//     $i = 0;
+//     $query = new WP_Query( $args );
+//     if($query->have_posts()):while($query->have_posts()):$query->the_post();
+//             $post_id = get_the_ID();
+//             $post_excerpt = types_render_field('excerpt', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
+//             //$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail_size' );
+//             $thumbnail_url = $thumbnail['0'] ? $thumbnail['0'] : '/wp-content/themes/NewHomeDream/images/default-post-thumbnail.png';
+//             $posts .= "
+//             <section class='excerpt row' id='excerpt-" . $i . "'>
+//             	<header class='excerpt-header' style='background-image:url(\"$thumbnail_url\");'><h2>" .
+//             	$post_title .
+//             	"</h2><span class='excerpt-date'>" .
+//             	$post_date .
+//             	"</span></header><article class='excerpt-content'>" .
+//             	$post_excerpt .
+//             	"<a class='learn'>LEARN MORE</a></article></section>";
+//             $i++;
+//         endwhile;
+//         wp_reset_postdata();
+//     endif;
+//     return $posts;
+// }

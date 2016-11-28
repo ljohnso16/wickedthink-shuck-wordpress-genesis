@@ -16,9 +16,14 @@ $light:                 #fff !default;
 
 // Typography
 // -------------------------
-$textColor:             #333 !default;
-$googleFont:            Arimo, Varela,  sans-serif !default; // Can use multiple fonts with a comma. Cabin, Open Sans, etc...
+$TisaSansPro: 			"ff-tisa-sans-web-pro",sans-serif !default;
+$SourceSansPro: 		"source-sans-pro",sans-serif !default;
+
+$textColor:             #8E8E8E !default;
+$googleFont:            $TisaSansPro !default;
 $googleFontWeight:      400 !default; // 400 or 700
-$sansFontFamily:        "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$serifFontFamily:       Georgia, "Times New Roman", Times, serif !default;
-$baseFontFamily:        $sansFontFamily !default;
+$sansFontFamily:        $SourceSansPro !default;
+$serifFontFamily:       $TisaSansPro !default;
+$baseFontFamily:        $SourceSansPro !default;
+
+

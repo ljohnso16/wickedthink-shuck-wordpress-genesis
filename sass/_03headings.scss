@@ -12,6 +12,7 @@
 		@include rem(margin-bottom, 16px);
 		font-family: $googleFont;
 		font-weight: 700;
+		color:$color-cta !important;
 	}
 
 	
@@ -75,3 +76,6 @@
 		
 		@include rem(margin-bottom, 24px);
 	}
+.textwidget,h4.widget-title.widgettitle{
+	text-align:center;
+}

@@ -19,6 +19,7 @@ jQuery(document).ready(function ($) {
         }, 500)
     })
 
-   // try{Typekit.load({ async: true });}catch(e){}
+   
 
 });
+try{Typekit.load({ async: true });}catch(e){}
