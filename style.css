@@ -2802,6 +2802,51 @@ div.gform_wrapper form li {
   margin: 1.6rem 0 0;
 }
 
+/*  CONTACT FORM  */
+.contact-form-shuck input.gform_button.button {
+  text-transform: uppercase;
+}
+.contact-form-shuck label {
+  display: none !important;
+}
+.contact-form-shuck textarea::-webkit-input-placeholder {
+  color: #fff;
+}
+.contact-form-shuck textarea:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff;
+}
+.contact-form-shuck textarea::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+}
+.contact-form-shuck textarea:-ms-input-placeholder {
+  color: #fff;
+}
+.contact-form-shuck input::-webkit-input-placeholder {
+  color: #fff;
+}
+.contact-form-shuck input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #fff;
+}
+.contact-form-shuck input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #fff;
+}
+.contact-form-shuck input:-ms-input-placeholder {
+  color: #fff;
+}
+.contact-form-shuck input, .contact-form-shuck textarea {
+  background-color: #D3CFD0;
+}
+
+body.contact div.site-inner {
+  background-image: url("./images/world-network.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 /* Testimonial Slider */
 div#testimonial-slider {
   background-image: url("./images/three-blueprint.jpg");
@@ -2838,7 +2883,6 @@ div#testimonial-slider div.item {
 /* Joyce and Steves Letter */
 div#j-s-letter-area {
   background: url("./images/top-left-bldg-plans.jpg") 0px 0px no-repeat, url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat;
-  /*            like z-index: 3; */
 }
 div#j-s-letter-area .j-s-letter {
   max-width: 980px;

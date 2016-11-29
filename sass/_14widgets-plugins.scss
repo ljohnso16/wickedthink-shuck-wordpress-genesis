@@ -34,6 +34,57 @@
 	div.gform_wrapper form li {
 		@include rem(margin, 16px 0 0);
 	}
+/*  CONTACT FORM  */
+	.contact-form-shuck{
+		input.gform_button.button {
+ 		   text-transform: uppercase;
+		} 
+		label {
+		    display: none !important;
+		}
+		textarea::-webkit-input-placeholder {
+		   color: #fff;
+		}
+
+		textarea:-moz-placeholder { /* Firefox 18- */
+		   color: #fff;  
+		}
+
+		textarea::-moz-placeholder {  /* Firefox 19+ */
+		   color: #fff;  
+		}
+
+		textarea:-ms-input-placeholder {  
+		   color: #fff;  
+		}
+		input::-webkit-input-placeholder {
+		   color: #fff;
+		}
+
+		input:-moz-placeholder { /* Firefox 18- */
+		   color: #fff;  
+		}
+
+		input::-moz-placeholder {  /* Firefox 19+ */
+		   color: #fff;  
+		}
+
+		input:-ms-input-placeholder {  
+		   color: #fff;  
+		}		
+		input, textarea{
+			background-color: $color-secondary;
+		}
+	}
+	//background
+	body.contact{
+		div.site-inner{
+			background-image:url('./images/world-network.jpg');    
+			background-size: cover;
+    		background-repeat: no-repeat;
+		}
+	}
+
 
 
 /* Testimonial Slider */
@@ -76,8 +127,8 @@
 	div#j-s-letter-area {
 //		background-image:url('./images/building-plans.jpg')
 background: 
-   url('./images/top-left-bldg-plans.jpg') 0px 0px no-repeat,  /* On top,    like z-index: 4; */
-   url('./images/bottom-right-bldg-plans.jpg') 100% 100% no-repeat;   /*            like z-index: 3; */
+   url('./images/top-left-bldg-plans.jpg') 0px 0px no-repeat,  
+   url('./images/bottom-right-bldg-plans.jpg') 100% 100% no-repeat;
 
 
 		.j-s-letter{
