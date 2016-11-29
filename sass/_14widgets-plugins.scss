@@ -35,27 +35,42 @@
 		@include rem(margin, 16px 0 0);
 	}
 
-	//
-
-
-div#testimonial-slider {
-   background: #2f4357;
-	div.item img{
-	    margin: 0 auto;
-	}
-	.carousel-caption{
-		padding: 0px !important;
-		bottom: 0px !important;
-		.excerpt{
-			margin-bottom: 20px !important;
+	div#testimonial-slider {
+	   background-image: url('./images/three-blueprint.jpg');
+		div.item img{
+		    margin: 0 auto;
+		    padding-top:30px;
 		}
-		p{
-			color: #fff !important;
-			margin: 0px !important;
-		}		
-	}
-	div.item{
-		height: 230px;
-	}
+		.carousel-caption{
+			padding: 0px !important;
+			bottom: 0px !important;
+			.excerpt{
+				margin-bottom: 15px !important;
+				@include rem(font-size, 20px);
+				font-family: $TisaSansPro;
+				font-weight: bold;
+				text-align:left;
+				//font-si
+			}
+			p{
+				color: #fff !important;
+				margin: 0px !important;
 
-}
+			}
+			p.testimonial-comapny-name{
+				font-size: smaller;
+				line-height: 0px;
+				padding-bottom: 30px;
+
+			}		
+		}
+		div.item{
+			height: 350px;
+			img{
+				// height: 115px !important;
+				// width: 115px !important;
+				// max-width: 115px !important;
+			}
+		}
+
+	}

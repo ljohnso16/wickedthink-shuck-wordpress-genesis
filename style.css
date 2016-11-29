@@ -1615,7 +1615,7 @@ nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
-  font-family: "source-sans-pro", sans-serif;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
 }
 
 /* Clearfix */
@@ -1641,7 +1641,7 @@ body {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.8;
-  font-family: "source-sans-pro", sans-serif;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
   color: #8E8E8E;
 }
 
@@ -2056,7 +2056,7 @@ h6,
 .genesis-nav-menu {
   clear: both;
   color: #fff;
-  font-family: "source-sans-pro", sans-serif;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
   letter-spacing: 1px;
   letter-spacing: 0.1rem;
   line-height: 1.5;
@@ -2803,24 +2803,35 @@ div.gform_wrapper form li {
 }
 
 div#testimonial-slider {
-  background: #2f4357;
+  background-image: url("./images/three-blueprint.jpg");
 }
 div#testimonial-slider div.item img {
   margin: 0 auto;
+  padding-top: 30px;
 }
 div#testimonial-slider .carousel-caption {
   padding: 0px !important;
   bottom: 0px !important;
 }
 div#testimonial-slider .carousel-caption .excerpt {
-  margin-bottom: 20px !important;
+  margin-bottom: 15px !important;
+  font-size: 20px;
+  font-size: 2rem;
+  font-family: "ff-tisa-sans-web-pro", sans-serif;
+  font-weight: bold;
+  text-align: left;
 }
 div#testimonial-slider .carousel-caption p {
   color: #fff !important;
   margin: 0px !important;
 }
+div#testimonial-slider .carousel-caption p.testimonial-comapny-name {
+  font-size: smaller;
+  line-height: 0px;
+  padding-bottom: 30px;
+}
 div#testimonial-slider div.item {
-  height: 230px;
+  height: 350px;
 }
 
 /*# sourceMappingURL=style.css.map */

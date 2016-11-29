@@ -115,7 +115,7 @@ function gs_theme_setup() {
 
 //* Modify the header URL - HTML5 Version
 function child_header_title( $title, $inside, $wrap ) {
-    $inside = sprintf( '<a href="http://example.com/" title="%s"><img alt="" src="' . get_stylesheet_directory_uri() . '/images/logo.png" /></a>', esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
+    $inside = sprintf( '<a href="'.home_url('/').'" title="%s"><img alt="" src="' . get_stylesheet_directory_uri() . '/images/logo.png" /></a>', esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
     return sprintf( '<%1$s class="site-title">%2$s</%1$s>', $wrap, $inside );
 }
 
@@ -280,15 +280,15 @@ function generate_testimonial_slider(){
 			}            
             if(!empty($content)){
 	            $posts .='            
-			    	   <img src="'.$quote_icon_url.'" alt="Testimonial" width="115" height="115">
+			    	   <img src="'.$quote_icon_url.'" alt="Testimonial">
 			    	   <div class="carousel-caption">
 			        	
 				        <p class="excerpt">'.$content.'</p>';
 				        if(!empty($fnamelname)){
-				        	$posts .='<p>'.$fnamelname.'</p>';
+				        	$posts .='<p class="testimonial-flname">'.$fnamelname.'</p>';
 				        }
 				        if(!empty($fnamelname)){
-				        	$posts .='<p>'.$companyname.'</p>';
+				        	$posts .='<p class="testimonial-comapny-name">'.$companyname.'</p>';
 				        }
 			    $posts.='</div></div>';
 			}
