@@ -85,7 +85,19 @@ function gs_theme_setup() {
 	
 	//Enqueue Sandbox Scripts
 	add_action( 'wp_enqueue_scripts', 'gs_enqueue_scripts', 1 );
-	
+		//Disable all emoji's
+	function disable_wp_emojicons() {
+
+	  // all actions related to emojis
+	  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	}
+	add_action( 'init', 'disable_wp_emojicons' );
 	/**
 	 * 13 Editor Styles
 	 * Takes a stylesheet string or an array of stylesheets.
@@ -167,7 +179,12 @@ function gs_register_sidebars() {
 			'id'			=> 'testimonial-slider-area',
 			'name'			=> __( 'testimonial Slider Area', CHILD_DOMAIN ),
 			'description'	=> __( 'This will show up before the footer.', CHILD_DOMAIN ),
-		)		
+		),
+		array(
+			'id'			=> 'j-s-letter',
+			'name'			=> __( 'Joyce and Steves Letter', CHILD_DOMAIN ),
+			'description'	=> __( 'This will show up with the letter background and the Title of Joyce and Steve. Home Page Only', CHILD_DOMAIN ),
+		),		
 	);
 	foreach ( $sidebars as $sidebar )
 		genesis_register_sidebar( $sidebar );
@@ -226,22 +243,18 @@ function sp_footer_creds_filter( $creds ) {
 }
 
 // Add Widget Area Before Footer
-add_action('genesis_before_footer', 'gs_do_before_footer', 10);
+
+add_action('genesis_before_footer', 'gs_do_before_footer');
 function gs_do_before_footer() {
- 	
- 	genesis_widget_area( 
-                'footer-call-action', 
+ 	if(is_front_page()){
+ 		genesis_widget_area( 
+            'j-s-letter', 
                 array(
-                        'before' => '<div id="footer-call-action"><div class="footer-call-action widget-area">', 
-                        'after' => '</div></div>',
+                        'before' => '<div id="j-s-letter-area"><div class="j-s-letter widget-area"><h3 class="header-title">A Letter from Joyce and Steve</h3>', 
+                        'after' => '<img id="sig" src="'.get_stylesheet_directory_uri().'/images/joyse-steve-signatures.png" /></div></div>',
                 ) 
         );
- 	
- }
-
-add_action('genesis_before_footer', 'gs_do_before_footer_2', 9);
-function gs_do_before_footer_2() {
- 	
+	}
  	genesis_widget_area( 
                 'testimonial-slider-area', 
                 array(
@@ -249,6 +262,13 @@ function gs_do_before_footer_2() {
                         'after' => '</div></div>',
                 ) 
         );
+ 	genesis_widget_area( 
+                'footer-call-action', 
+                array(
+                        'before' => '<div id="footer-call-action"><div class="footer-call-action widget-area">', 
+                        'after' => '</div></div>',
+                ) 
+        ); 	
  	
  }
 

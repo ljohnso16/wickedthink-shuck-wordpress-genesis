@@ -2802,6 +2802,7 @@ div.gform_wrapper form li {
   margin: 1.6rem 0 0;
 }
 
+/* Testimonial Slider */
 div#testimonial-slider {
   background-image: url("./images/three-blueprint.jpg");
 }
@@ -2832,6 +2833,36 @@ div#testimonial-slider .carousel-caption p.testimonial-comapny-name {
 }
 div#testimonial-slider div.item {
   height: 350px;
+}
+
+/* Joyce and Steves Letter */
+div#j-s-letter-area {
+  background: url("./images/top-left-bldg-plans.jpg") 0px 0px no-repeat, url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat;
+  /*            like z-index: 3; */
+}
+div#j-s-letter-area .j-s-letter {
+  max-width: 980px;
+  margin: auto;
+}
+div#j-s-letter-area .j-s-letter h3.header-title {
+  color: #8E8E8E !important;
+  font-weight: normal;
+}
+div#j-s-letter-area .j-s-letter .widget-wrap h4.widget-title {
+  text-align: left;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-family: "ff-tisa-sans-web-pro", sans-serif !important;
+  color: #8E8E8E !important;
+  font-weight: normal;
+  text-transform: uppercase !important;
+  font-style: italic;
+}
+div#j-s-letter-area .j-s-letter .widget-wrap .textwidget {
+  text-align: left !important;
+}
+div#j-s-letter-area .j-s-letter .widget-wrap .textwidget p {
+  padding-bottom: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

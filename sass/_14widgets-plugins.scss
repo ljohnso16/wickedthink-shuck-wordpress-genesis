@@ -35,6 +35,9 @@
 		@include rem(margin, 16px 0 0);
 	}
 
+
+/* Testimonial Slider */
+
 	div#testimonial-slider {
 	   background-image: url('./images/three-blueprint.jpg');
 		div.item img{
@@ -66,11 +69,41 @@
 		}
 		div.item{
 			height: 350px;
-			img{
-				// height: 115px !important;
-				// width: 115px !important;
-				// max-width: 115px !important;
-			}
 		}
 
 	}
+/* Joyce and Steves Letter */
+	div#j-s-letter-area {
+//		background-image:url('./images/building-plans.jpg')
+background: 
+   url('./images/top-left-bldg-plans.jpg') 0px 0px no-repeat,  /* On top,    like z-index: 4; */
+   url('./images/bottom-right-bldg-plans.jpg') 100% 100% no-repeat;   /*            like z-index: 3; */
+
+
+		.j-s-letter{
+		    max-width: 980px;
+		    margin: auto;
+		h3.header-title{
+		    color: $textColor !important;
+		    font-weight: normal;
+		}
+		.widget-wrap {
+			h4.widget-title{
+				text-align: left;
+			    @include rem(font-size, 14px);
+			    font-family: $baseFontFamily !important;
+			    color: $textColor !important;
+			    font-weight: normal;
+			    text-transform: uppercase !important;
+			    font-style:italic;			    
+			}
+			.textwidget{
+				text-align: left !important;
+				p{
+					padding-bottom: 1rem;
+				}
+			}
+	
+		}
+	}
+}	
