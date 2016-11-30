@@ -131,7 +131,7 @@
    		background-repeat: no-repeat;
    		background-position: right;
 		div.view-more-link {
-			width:830px; 
+			width:780px; 
 			position:relative;
 			text-align: right;
 			font-style:italic;
@@ -148,8 +148,11 @@
 		.project-item{
 			height: 242px;
 		}
+		h4.widget-title.widgettitle{
+			margin-top: 10px;
+		}
 		.carousel-inner{
-			max-width:830px;
+			max-width:780px;
 			margin:auto;
 		}
 		.hover-text {
@@ -170,10 +173,11 @@ background:
    url('./images/top-left-bldg-plans.jpg') 0px 0px no-repeat,  
    url('./images/bottom-right-bldg-plans.jpg') 100% 100% no-repeat;
 
-
+    
 		.j-s-letter{
 		    max-width: 980px;
 		    margin: auto;
+			padding: 114px 0px;
 		h3.header-title{
 		    color: $textColor !important;
 		    font-weight: normal;
@@ -186,7 +190,17 @@ background:
 			    color: $textColor !important;
 			    font-weight: normal;
 			    text-transform: uppercase !important;
-			    font-style:italic;			    
+			    font-style:italic; 
+				position:relative;
+			}
+			h4.widget-title:after {
+				content:''; 
+				width:150px; 
+				height:4px; 
+				background-color:$color-cta; 
+				position:absolute; 
+				bottom:-12px;
+				left: 0px;
 			}
 			.textwidget{
 				text-align: left !important;

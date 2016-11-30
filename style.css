@@ -2888,7 +2888,7 @@ div#project-carousel {
   background-position: right;
 }
 div#project-carousel div.view-more-link {
-  width: 830px;
+  width: 780px;
   position: relative;
   text-align: right;
   font-style: italic;
@@ -2905,8 +2905,11 @@ div#project-carousel .view-more-link:after {
 div#project-carousel .project-item {
   height: 242px;
 }
+div#project-carousel h4.widget-title.widgettitle {
+  margin-top: 10px;
+}
 div#project-carousel .carousel-inner {
-  max-width: 830px;
+  max-width: 780px;
   margin: auto;
 }
 div#project-carousel .hover-text {
@@ -2925,6 +2928,7 @@ div#j-s-letter-area {
 div#j-s-letter-area .j-s-letter {
   max-width: 980px;
   margin: auto;
+  padding: 114px 0px;
 }
 div#j-s-letter-area .j-s-letter h3.header-title {
   color: #8E8E8E !important;
@@ -2939,6 +2943,16 @@ div#j-s-letter-area .j-s-letter .widget-wrap h4.widget-title {
   font-weight: normal;
   text-transform: uppercase !important;
   font-style: italic;
+  position: relative;
+}
+div#j-s-letter-area .j-s-letter .widget-wrap h4.widget-title:after {
+  content: '';
+  width: 150px;
+  height: 4px;
+  background-color: #28315D;
+  position: absolute;
+  bottom: -12px;
+  left: 0px;
 }
 div#j-s-letter-area .j-s-letter .widget-wrap .textwidget {
   text-align: left !important;

@@ -136,41 +136,41 @@ function child_header_title( $title, $inside, $wrap ) {
 // Register Sidebars
 function gs_register_sidebars() {
 	$sidebars = array(
-		array(
-			'id'			=> 'home-top',
-			'name'			=> __( 'Home Top', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the top homepage section.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'home-middle-01',
-			'name'			=> __( 'Home Left Middle', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the homepage left section.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'home-middle-02',
-			'name'			=> __( 'Home Middle Middle', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the homepage middle section.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'home-middle-03',
-			'name'			=> __( 'Home Right Middle', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'home-bottom',
-			'name'			=> __( 'Home Bottom', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
-		),
+		// array(
+		// 	'id'			=> 'home-top',
+		// 	'name'			=> __( 'Home Top', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This is the top homepage section.', CHILD_DOMAIN ),
+		// ),
+		// array(
+		// 	'id'			=> 'home-middle-01',
+		// 	'name'			=> __( 'Home Left Middle', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This is the homepage left section.', CHILD_DOMAIN ),
+		// ),
+		// array(
+		// 	'id'			=> 'home-middle-02',
+		// 	'name'			=> __( 'Home Middle Middle', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This is the homepage middle section.', CHILD_DOMAIN ),
+		// ),
+		// array(
+		// 	'id'			=> 'home-middle-03',
+		// 	'name'			=> __( 'Home Right Middle', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
+		// ),
+		// array(
+		// 	'id'			=> 'home-bottom',
+		// 	'name'			=> __( 'Home Bottom', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
+		// ),
 		array(
 			'id'			=> 'featured-projects',
 			'name'			=> __( 'Featured Projects', CHILD_DOMAIN ),
 			'description'	=> __( 'Use featured posts to showcase your Featured Projects.', CHILD_DOMAIN ),
 		),
-		array(
-			'id'			=> 'after-post',
-			'name'			=> __( 'After Post', CHILD_DOMAIN ),
-			'description'	=> __( 'This will show up after every post.', CHILD_DOMAIN ),
-		),
+		// array(
+		// 	'id'			=> 'after-post',
+		// 	'name'			=> __( 'After Post', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This will show up after every post.', CHILD_DOMAIN ),
+		// ),
 		array(
 			'id'			=> 'footer-call-action',
 			'name'			=> __( 'Call to Action Footer', CHILD_DOMAIN ),
@@ -336,6 +336,7 @@ function generate_featured_projects(){
     $i = 0;
     $posts='
     	<div id="project-carousel" class="carousel slide" data-ride="carousel">
+        <h4 class="widget-title widgettitle">Featured Projects</h4>
         <div class="carousel-inner">';
     $query = new WP_Query( $args );
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
