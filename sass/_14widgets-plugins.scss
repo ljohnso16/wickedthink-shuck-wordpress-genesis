@@ -123,6 +123,46 @@
 		}
 
 	}
+
+/*  Featured Projects */
+	div#project-carousel{
+		background-image:url('./images/building-schematic.jpg');    
+		background-size: cover;
+   		background-repeat: no-repeat;
+   		background-position: right;
+		div.view-more-link {
+			width:830px; 
+			position:relative;
+			text-align: right;
+			font-style:italic;
+		}
+		.view-more-link:after {
+			content:''; 
+			width:138px; 
+			height:4px; 
+			background-color:#8b0000; 
+			position:absolute; 
+			top:-4px;
+			left: 690px;
+		}
+		.project-item{
+			height: 242px;
+		}
+		.carousel-inner{
+			max-width:830px;
+			margin:auto;
+		}
+		.hover-text {
+	    	position: relative;
+	    	top: -146px;
+			color: #fff;
+		    font-weight: bold;
+		    font-size:1.5em;
+		    display: none;    	
+		}
+	}
+
+
 /* Joyce and Steves Letter */
 	div#j-s-letter-area {
 //		background-image:url('./images/building-plans.jpg')

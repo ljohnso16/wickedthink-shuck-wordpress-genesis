@@ -20,6 +20,15 @@ jQuery(document).ready(function ($) {
     })
 
    
+//hover for image block on all pages 
+$('.project-item').hover(
+        function(){
+            $(this).find('.hover-text').slideDown(250);
+        },
+        function(){
+            $(this).find('.hover-text').fadeOut(100);
+        }
+    );
 
 });
 try{Typekit.load({ async: true });}catch(e){}

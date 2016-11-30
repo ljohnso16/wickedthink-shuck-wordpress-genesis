@@ -39,6 +39,7 @@ function gs_theme_setup() {
 	
 	//Custom Image Sizes
 	add_image_size( 'featured-image', 225, 160, TRUE );
+	add_image_size( 'featured-projects', 450, 242, FALSE );
 	
 	// Enable Custom Background
 	//add_theme_support( 'custom-background' );
@@ -161,9 +162,9 @@ function gs_register_sidebars() {
 			'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
 		),
 		array(
-			'id'			=> 'portfolio',
-			'name'			=> __( 'Portfolio', CHILD_DOMAIN ),
-			'description'	=> __( 'Use featured posts to showcase your portfolio.', CHILD_DOMAIN ),
+			'id'			=> 'featured-projects',
+			'name'			=> __( 'Featured Projects', CHILD_DOMAIN ),
+			'description'	=> __( 'Use featured posts to showcase your Featured Projects.', CHILD_DOMAIN ),
 		),
 		array(
 			'id'			=> 'after-post',
@@ -248,6 +249,13 @@ add_action('genesis_before_footer', 'gs_do_before_footer');
 function gs_do_before_footer() {
  	if(is_front_page()){
  		genesis_widget_area( 
+            'featured-projects', 
+                array(
+                        'before' => '<div id="featured-projects-area"><div class="featured-projects widget-area">', 
+                        'after' => '</div></div>',
+                ) 
+        );
+ 		genesis_widget_area( 
             'j-s-letter', 
                 array(
                         'before' => '<div id="j-s-letter-area"><div class="j-s-letter widget-area"><h3 class="header-title">A Letter from Joyce and Steve</h3>', 
@@ -271,12 +279,12 @@ function gs_do_before_footer() {
         ); 	
  	
  }
-
+//SLIDER FOR TESTIMONIALS
 add_shortcode('testimonial-slider','generate_testimonial_slider');
 function generate_testimonial_slider(){
     $args = array(
         'post_type' => 'testimonial',
-    	'posts_per_page' => 2
+    	'posts_per_page' => 6
     );
     $i = 0;
     $query = new WP_Query( $args );
@@ -316,5 +324,53 @@ function generate_testimonial_slider(){
         endwhile;
         wp_reset_postdata();
     endif;
+    return $posts;
+}
+//SLIDER FOR FEATURED PROJECTS
+add_shortcode('featured-projects','generate_featured_projects');
+function generate_featured_projects(){
+    $args = array(
+        'post_type' => 'projects',
+    	'posts_per_page' => 12,
+		'category_name' => 'featured');
+    $i = 0;
+    $posts='
+    	<div id="project-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">';
+    $query = new WP_Query( $args );
+    if($query->have_posts()):while($query->have_posts()):$query->the_post();
+            $post_id = get_the_ID();
+			$thumb_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'featured-projects', true);
+			$featured_image = '<img src="'.$thumb_url[0].'">';
+            $hover_text = types_render_field('hover-text', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
+            if($i==0){
+				$posts .= '<div class="item active">';
+            }
+            if($i==4 || $i==8){
+				$posts .= '</div><div class="item">';
+            }
+            
+            if($i%2 == 0){
+            	$posts .='<div><div class="first one-half project-item">'.$featured_image;
+		        if(!empty($hover_text)){
+					$posts .='<div class="hover-text">'.$hover_text.'</div>';
+				}
+            	$posts .='</div></div>';
+            }
+            else{
+				$posts .='<div class="one-half project-item">'.$featured_image;
+		        if(!empty($hover_text)){
+					$posts .='<div class="hover-text">'.$hover_text.'</div>';
+				}
+				$posts .='</div><div class="clearfix"></div>';
+            }
+	        if($i==11){
+				$posts .= '</div>';
+            }
+            $i++;
+        endwhile;
+        wp_reset_postdata();
+    endif;
+    $posts .= '</div><div class="view-more-link"><a href="./featured-projects/">View More</a></div></div>';
     return $posts;
 }
