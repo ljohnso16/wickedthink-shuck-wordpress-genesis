@@ -1977,6 +1977,14 @@ h6,
   text-align: center;
 }
 
+h1.entry-title {
+  visibility: hidden;
+}
+
+.home-page .site-inner {
+  display: none;
+}
+
 /*********************************************************************************************
 
             LAYOUT

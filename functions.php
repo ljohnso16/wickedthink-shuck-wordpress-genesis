@@ -307,6 +307,17 @@ function gs_do_before_footer() {
         ); 	
  	
  }
+add_action( 'genesis_after_header', 'shuck_header_sliders' );
+function shuck_header_sliders() {
+    $post_id = get_the_ID();
+	$ourshortcode = types_render_field('solil-shortcode', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));	
+	if(!empty($ourshortcode)){
+		echo $ourshortcode;
+	}
+	else
+		return;
+
+} 
 //SLIDER FOR TESTIMONIALS
 add_shortcode('testimonial-slider','generate_testimonial_slider');
 function generate_testimonial_slider(){

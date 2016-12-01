@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types>
+    <settings>
+        <add_resized_images_to_library>0</add_resized_images_to_library>
+        <register_translations_on_import>1</register_translations_on_import>
+        <images_remote>0</images_remote>
+        <images_remote_cache_time>36</images_remote_cache_time>
+        <help_box>by_types</help_box>
+        <hide_standard_custom_fields_metabox>show</hide_standard_custom_fields_metabox>
+        <postmeta_unfiltered_html>on</postmeta_unfiltered_html>
+        <usermeta_unfiltered_html>on</usermeta_unfiltered_html>
+    </settings>
+    <groups>
+        <group>
+            <ID>72</ID>
+            <post_content></post_content>
+            <post_title>Soliloquy Hero Slider</post_title>
+            <post_excerpt></post_excerpt>
+            <post_type>wp-types-group</post_type>
+            <post_status>publish</post_status>
+            <meta>
+                <_wp_types_group_post_types>,,page,</_wp_types_group_post_types>
+                <_wp_types_group_templates>,,,,,,</_wp_types_group_templates>
+                <_wp_types_group_terms>all</_wp_types_group_terms>
+                <_wp_types_group_filters_association>any</_wp_types_group_filters_association>
+                <_wp_types_group_fields>,solil-shortcode,</_wp_types_group_fields>
+            </meta>
+            <hash>04f9711a5706d73fbeb7cadc6bb69c49</hash>
+            <checksum>04f9711a5706d73fbeb7cadc6bb69c49</checksum>
+            <__types_id>soliloquy-hero-slider</__types_id>
+            <__types_title>Soliloquy Hero Slider</__types_title>
+        </group>
+        <group>
+            <ID>60</ID>
+            <post_content></post_content>
+            <post_title>Team Member</post_title>
+            <post_excerpt></post_excerpt>
+            <post_type>wp-types-group</post_type>
+            <post_status>publish</post_status>
+            <meta>
+                <_wp_types_group_post_types>,,member,</_wp_types_group_post_types>
+                <_wp_types_group_templates>,,,,,,</_wp_types_group_templates>
+                <_wp_types_group_terms>all</_wp_types_group_terms>
+                <_wp_types_group_filters_association>any</_wp_types_group_filters_association>
+                <_wp_types_group_fields>,title,</_wp_types_group_fields>
+            </meta>
+            <hash>43fb8fcc64edc4301f5a0ecabbfb0df0</hash>
+            <checksum>43fb8fcc64edc4301f5a0ecabbfb0df0</checksum>
+            <__types_id>team-member</__types_id>
+            <__types_title>Team Member</__types_title>
+        </group>
+        <group>
+            <ID>34</ID>
+            <post_content></post_content>
+            <post_title>Projects</post_title>
+            <post_excerpt></post_excerpt>
+            <post_type>wp-types-group</post_type>
+            <post_status>publish</post_status>
+            <meta>
+                <_wp_types_group_fields>,hover-text,</_wp_types_group_fields>
+                <_wp_types_group_post_types>,,projects,</_wp_types_group_post_types>
+                <_wp_types_group_templates>,,,,,,</_wp_types_group_templates>
+                <_wp_types_group_terms>all</_wp_types_group_terms>
+                <_wp_types_group_filters_association>any</_wp_types_group_filters_association>
+            </meta>
+            <hash>b5d9ce2f5cdb2eb534d3b954bd87eead</hash>
+            <checksum>b5d9ce2f5cdb2eb534d3b954bd87eead</checksum>
+            <__types_id>projects</__types_id>
+            <__types_title>Projects</__types_title>
+        </group>
+        <group>
+            <ID>30</ID>
+            <post_content></post_content>
+            <post_title>Testimonial</post_title>
+            <post_excerpt></post_excerpt>
+            <post_type>wp-types-group</post_type>
+            <post_status>publish</post_status>
+            <meta>
+                <_wp_types_group_fields>,cname,fname-lname,</_wp_types_group_fields>
+                <_wp_types_group_post_types>,,testimonial,</_wp_types_group_post_types>
+                <_wp_types_group_templates>,,,,,,</_wp_types_group_templates>
+                <_wp_types_group_terms>all</_wp_types_group_terms>
+                <_wp_types_group_filters_association>any</_wp_types_group_filters_association>
+            </meta>
+            <hash>12e902ee08ac1551bc29bf1735e97fff</hash>
+            <checksum>12e902ee08ac1551bc29bf1735e97fff</checksum>
+            <__types_id>testimonial</__types_id>
+            <__types_title>Testimonial</__types_title>
+        </group>
+    </groups>
+    <fields>
+        <field>
+            <id>cname</id>
+            <slug>cname</slug>
+            <type>textfield</type>
+            <name>Company Name</name>
+            <description></description>
+            <data>
+                <slug-pre-save>cname</slug-pre-save>
+                <placeholder>Company Name</placeholder>
+                <user_default_value></user_default_value>
+                <repetitive>0</repetitive>
+                <custom_use></custom_use>
+                <submit-key>cname</submit-key>
+                <disabled_by_type>0</disabled_by_type>
+            </data>
+            <meta_key>wpcf-cname</meta_key>
+            <meta_type>postmeta</meta_type>
+            <__types_id>cname</__types_id>
+            <__types_title>Company Name</__types_title>
+            <hash>f567968766b8c2c764ab139d724df91c</hash>
+            <checksum>f567968766b8c2c764ab139d724df91c</checksum>
+        </field>
+        <field>
+            <id>fname-lname</id>
+            <slug>fname-lname</slug>
+            <type>textfield</type>
+            <name>First and Last Name</name>
+            <description>First and last name of person giving testimonial</description>
+            <data>
+                <slug-pre-save>fname-lname</slug-pre-save>
+                <placeholder>First and Last Name</placeholder>
+                <user_default_value></user_default_value>
+                <repetitive>0</repetitive>
+                <custom_use></custom_use>
+                <submit-key>fname-lname</submit-key>
+                <disabled_by_type>0</disabled_by_type>
+            </data>
+            <meta_key>wpcf-fname-lname</meta_key>
+            <meta_type>postmeta</meta_type>
+            <__types_id>fname-lname</__types_id>
+            <__types_title>First and Last Name</__types_title>
+            <hash>443af30b1975e0a02cc91cc66066a226</hash>
+            <checksum>443af30b1975e0a02cc91cc66066a226</checksum>
+        </field>
+        <field>
+            <id>featured-option</id>
+            <slug>featured-option</slug>
+            <type>checkbox</type>
+            <name>Featured</name>
+            <description>Set the Project as Featured</description>
+            <data>
+                <slug-pre-save>featured-option</slug-pre-save>
+                <set_value>1</set_value>
+                <save_empty>no</save_empty>
+                <display>db</display>
+                <display_value_not_selected></display_value_not_selected>
+                <display_value_selected></display_value_selected>
+                <custom_use></custom_use>
+                <submit-key>featured-option</submit-key>
+                <disabled_by_type>0</disabled_by_type>
+            </data>
+            <meta_key>wpcf-featured-option</meta_key>
+            <meta_type>postmeta</meta_type>
+            <__types_id>featured-option</__types_id>
+            <__types_title>Featured</__types_title>
+            <hash>0b28a687610fab4bfa74aa0247acf55c</hash>
+            <checksum>0b28a687610fab4bfa74aa0247acf55c</checksum>
+        </field>
+        <field>
+            <id>archived-project</id>
+            <slug>archived-project</slug>
+            <type>checkbox</type>
+            <name>Archived Project</name>
+            <description>Marks the Project as Archived</description>
+            <data>
+                <slug-pre-save>archived-project</slug-pre-save>
+                <set_value>1</set_value>
+                <save_empty>no</save_empty>
+                <display>db</display>
+                <display_value_not_selected></display_value_not_selected>
+                <display_value_selected></display_value_selected>
+                <custom_use></custom_use>
+                <submit-key>archived-project</submit-key>
+                <disabled_by_type>0</disabled_by_type>
+            </data>
+            <meta_key>wpcf-archived-project</meta_key>
+            <meta_type>postmeta</meta_type>
+            <__types_id>archived-project</__types_id>
+            <__types_title>Archived Project</__types_title>
+            <hash>bdb951cfb6067c0199f882119652e6b7</hash>
+            <checksum>bdb951cfb6067c0199f882119652e6b7</checksum>
+        </field>
+        <field>
+            <id>hover-text</id>
+            <slug>hover-text</slug>
+            <type>textfield</type>
+            <name>Hover Text</name>
+            <description>Text that Appears on Featured Projects Panel</description>
+            <data>
+                <slug-pre-save>hover-text</slug-pre-save>
+                <placeholder></placeholder>
+                <user_default_value></user_default_value>
+                <repetitive>0</repetitive>
+                <custom_use></custom_use>
+                <submit-key>hover-text</submit-key>
+                <disabled_by_type>0</disabled_by_type>
+            </data>
+            <meta_key>wpcf-hover-text</meta_key>
+            <meta_type>postmeta</meta_type>
+            <__types_id>hover-text</__types_id>
+            <__types_title>Hover Text</__types_title>
+            <hash>5304b9b875dcec8fd2e6d62509f0d693</hash>
+            <checksum>5304b9b875dcec8fd2e6d62509f0d693</checksum>
+        </field>
+        <field>
+            <id>title</id>
+            <slug>title</slug>
+            <type>textfield</type>
+            <name>Position/Title</name>
+            <description>Entire position/title</description>
+            <data>
+                <slug-pre-save>title</slug-pre-save>
+                <placeholder></placeholder>
+                <user_default_value></user_default_value>
+                <repetitive>0</repetitive>
+                <custom_use></custom_use>
+                <submit-key>title</submit-key>
+                <disabled_by_type>0</disabled_by_type>
+            </data>
+            <meta_key>wpcf-title</meta_key>
+            <meta_type>postmeta</meta_type>
+            <__types_id>title</__types_id>
+            <__types_title>Position/Title</__types_title>
+            <hash>40326e446c927cd30d2d143544118c0e</hash>
+            <checksum>40326e446c927cd30d2d143544118c0e</checksum>
+        </field>
+        <field>
+            <id>solil-shortcode</id>
+            <slug>solil-shortcode</slug>
+            <type>textfield</type>
+            <name>Slider Shortcode</name>
+            <description>Copy and paste the shortcode for the slider to apear here 
+i.e: [soliloquy slug=\&quot;home\&quot;]
+</description>
+            <data>
+                <slug-pre-save>solil-shortcode</slug-pre-save>
+                <placeholder>Shortcode Here</placeholder>
+                <user_default_value></user_default_value>
+                <repetitive>0</repetitive>
+                <custom_use></custom_use>
+                <submit-key>solil-shortcode</submit-key>
+                <disabled_by_type>0</disabled_by_type>
+            </data>
+            <meta_key>wpcf-solil-shortcode</meta_key>
+            <meta_type>postmeta</meta_type>
+            <__types_id>solil-shortcode</__types_id>
+            <__types_title>Slider Shortcode</__types_title>
+            <hash>791251179cb424fceb8c6b61c2e6f3e3</hash>
+            <checksum>791251179cb424fceb8c6b61c2e6f3e3</checksum>
+        </field>
+    </fields>
+    <types>
+        <type>
+            <_builtin></_builtin>
+            <_toolset_edit_last>1480280941</_toolset_edit_last>
+            <_wpcf_author_id>1</_wpcf_author_id>
+            <wpcf-post-type>testimonial</wpcf-post-type>
+            <icon>editor-quote</icon>
+            <labels>
+                <name>Testimonials</name>
+                <singular_name>Testimonial</singular_name>
+                <add_new>Add New</add_new>
+                <add_new_item>Add New %s</add_new_item>
+                <edit_item>Edit %s</edit_item>
+                <new_item>New %s</new_item>
+                <view_item>View %s</view_item>
+                <search_items>Search %s</search_items>
+                <not_found>No %s found</not_found>
+                <not_found_in_trash>No %s found in Trash</not_found_in_trash>
+                <parent_item_colon>Parent text</parent_item_colon>
+                <all_items>All items</all_items>
+                <enter_title_here>Enter title here</enter_title_here>
+            </labels>
+            <slug>testimonial</slug>
+            <description></description>
+            <public>public</public>
+            <menu_position>5--wpcf-add-menu-after--edit.php</menu_position>
+            <dashboard_glance>1</dashboard_glance>
+            <custom-field-group>
+                <testimonial>30</testimonial>
+            </custom-field-group>
+            <custom_fields>
+                <wpcf-fname-lname>1</wpcf-fname-lname>
+                <wpcf-cname>1</wpcf-cname>
+            </custom_fields>
+            <supports>
+                <title>1</title>
+                <editor>1</editor>
+            </supports>
+            <rewrite>
+                <enabled>1</enabled>
+                <custom>normal</custom>
+                <slug></slug>
+            </rewrite>
+            <has_archive_slug></has_archive_slug>
+            <show_in_menu>1</show_in_menu>
+            <show_in_menu_page></show_in_menu_page>
+            <show_ui>1</show_ui>
+            <publicly_queryable>1</publicly_queryable>
+            <can_export>1</can_export>
+            <show_in_nav_menus>1</show_in_nav_menus>
+            <query_var_enabled>1</query_var_enabled>
+            <query_var></query_var>
+            <permalink_epmask>EP_PERMALINK</permalink_epmask>
+            <rest_base></rest_base>
+            <id>testimonial</id>
+            <__types_id>testimonial</__types_id>
+            <__types_title>Testimonials</__types_title>
+            <hash>ccb518e753813c895e7015c6d672bd0b</hash>
+            <checksum>ccb518e753813c895e7015c6d672bd0b</checksum>
+        </type>
+        <type>
+            <_builtin></_builtin>
+            <_toolset_edit_last>1480624479</_toolset_edit_last>
+            <_wpcf_author_id>1</_wpcf_author_id>
+            <wpcf-post-type>projects</wpcf-post-type>
+            <icon>hammer</icon>
+            <labels>
+                <name>Projects</name>
+                <singular_name>Project</singular_name>
+                <add_new>Add New</add_new>
+                <add_new_item>Add New %s</add_new_item>
+                <edit_item>Edit %s</edit_item>
+                <new_item>New %s</new_item>
+                <view_item>View %s</view_item>
+                <search_items>Search %s</search_items>
+                <not_found>No %s found</not_found>
+                <not_found_in_trash>No %s found in Trash</not_found_in_trash>
+                <parent_item_colon>Parent text</parent_item_colon>
+                <all_items>All items</all_items>
+                <enter_title_here>Enter title here</enter_title_here>
+            </labels>
+            <slug>projects</slug>
+            <description></description>
+            <public>public</public>
+            <menu_position>5--wpcf-add-menu-after--edit.php</menu_position>
+            <taxonomies>
+                <category>1</category>
+            </taxonomies>
+            <custom-field-group>
+                <team-member>60</team-member>
+                <projects>34</projects>
+            </custom-field-group>
+            <custom_fields>
+                <wpcf-hover-text>1</wpcf-hover-text>
+            </custom_fields>
+            <supports>
+                <title>1</title>
+                <editor>1</editor>
+                <thumbnail>1</thumbnail>
+            </supports>
+            <rewrite>
+                <enabled>1</enabled>
+                <custom>normal</custom>
+                <slug></slug>
+                <with_front>1</with_front>
+                <feeds>1</feeds>
+                <pages>1</pages>
+            </rewrite>
+            <has_archive>1</has_archive>
+            <has_archive_slug></has_archive_slug>
+            <show_in_menu>1</show_in_menu>
+            <show_in_menu_page></show_in_menu_page>
+            <show_ui>1</show_ui>
+            <publicly_queryable>1</publicly_queryable>
+            <can_export>1</can_export>
+            <show_in_nav_menus>1</show_in_nav_menus>
+            <query_var_enabled>1</query_var_enabled>
+            <query_var></query_var>
+            <permalink_epmask>EP_PERMALINK</permalink_epmask>
+            <rest_base></rest_base>
+            <id>projects</id>
+            <__types_id>projects</__types_id>
+            <__types_title>Projects</__types_title>
+            <hash>299b53111e0b15b19ae1bd9dc5dbff1e</hash>
+            <checksum>299b53111e0b15b19ae1bd9dc5dbff1e</checksum>
+        </type>
+        <type>
+            <_builtin></_builtin>
+            <_toolset_edit_last>1480571172</_toolset_edit_last>
+            <_wpcf_author_id>1</_wpcf_author_id>
+            <wpcf-post-type>member</wpcf-post-type>
+            <icon>businessman</icon>
+            <labels>
+                <name>Members</name>
+                <singular_name>Member</singular_name>
+                <add_new>Add New</add_new>
+                <add_new_item>Add New %s</add_new_item>
+                <edit_item>Edit %s</edit_item>
+                <new_item>New %s</new_item>
+                <view_item>View %s</view_item>
+                <search_items>Search %s</search_items>
+                <not_found>No %s found</not_found>
+                <not_found_in_trash>No %s found in Trash</not_found_in_trash>
+                <parent_item_colon>Parent text</parent_item_colon>
+                <all_items>All items</all_items>
+                <enter_title_here>Team Member Name First and Last</enter_title_here>
+            </labels>
+            <slug>member</slug>
+            <description></description>
+            <public>public</public>
+            <menu_position>5--wpcf-add-menu-after--edit.php?post_type=testimonial</menu_position>
+            <custom-field-group>
+                <team-member>60</team-member>
+            </custom-field-group>
+            <custom_fields>
+                <wpcf-title>1</wpcf-title>
+            </custom_fields>
+            <supports>
+                <title>1</title>
+                <editor>1</editor>
+                <thumbnail>1</thumbnail>
+            </supports>
+            <rewrite>
+                <enabled>1</enabled>
+                <custom>normal</custom>
+                <slug></slug>
+                <with_front>1</with_front>
+                <feeds>1</feeds>
+                <pages>1</pages>
+            </rewrite>
+            <has_archive>1</has_archive>
+            <has_archive_slug></has_archive_slug>
+            <show_in_menu>1</show_in_menu>
+            <show_in_menu_page></show_in_menu_page>
+            <show_ui>1</show_ui>
+            <publicly_queryable>1</publicly_queryable>
+            <can_export>1</can_export>
+            <show_in_nav_menus>1</show_in_nav_menus>
+            <query_var_enabled>1</query_var_enabled>
+            <query_var></query_var>
+            <permalink_epmask>EP_PERMALINK</permalink_epmask>
+            <rest_base></rest_base>
+            <id>member</id>
+            <__types_id>member</__types_id>
+            <__types_title>Members</__types_title>
+            <hash>64683afd0961233f8fe0677858974463</hash>
+            <checksum>64683afd0961233f8fe0677858974463</checksum>
+        </type>
+    </types>
+    <taxonomies>
+        <taxonomy>
+            <labels>
+                <name>Categories</name>
+                <singular_name>Category</singular_name>
+                <search_items>Search Categories</search_items>
+                <popular_items></popular_items>
+                <all_items>All Categories</all_items>
+                <parent_item>Parent Category</parent_item>
+                <parent_item_colon>Parent Category:</parent_item_colon>
+                <edit_item>Edit Category</edit_item>
+                <view_item>View Category</view_item>
+                <update_item>Update Category</update_item>
+                <add_new_item>Add New Category</add_new_item>
+                <new_item_name>New Category Name</new_item_name>
+                <separate_items_with_commas></separate_items_with_commas>
+                <add_or_remove_items></add_or_remove_items>
+                <choose_from_most_used></choose_from_most_used>
+                <not_found>No categories found.</not_found>
+                <no_terms>No categories</no_terms>
+                <items_list_navigation>Categories list navigation</items_list_navigation>
+                <items_list>Categories list</items_list>
+                <menu_name>Categories</menu_name>
+                <name_admin_bar>category</name_admin_bar>
+            </labels>
+            <description></description>
+            <public>1</public>
+            <publicly_queryable>1</publicly_queryable>
+            <hierarchical>1</hierarchical>
+            <show_ui>1</show_ui>
+            <show_in_menu>1</show_in_menu>
+            <show_in_nav_menus>1</show_in_nav_menus>
+            <show_tagcloud>1</show_tagcloud>
+            <show_in_quick_edit>1</show_in_quick_edit>
+            <show_admin_column>1</show_admin_column>
+            <meta_box_cb>post_categories_meta_box</meta_box_cb>
+            <rewrite>
+                <with_front>1</with_front>
+                <hierarchical>1</hierarchical>
+                <ep_mask>512</ep_mask>
+                <slug>category</slug>
+            </rewrite>
+            <query_var>category_name</query_var>
+            <update_count_callback></update_count_callback>
+            <_builtin>1</_builtin>
+            <cap>
+                <manage_terms>manage_categories</manage_terms>
+                <edit_terms>manage_categories</edit_terms>
+                <delete_terms>manage_categories</delete_terms>
+                <assign_terms>edit_posts</assign_terms>
+            </cap>
+            <name>category</name>
+            <label>Categories</label>
+            <slug>category</slug>
+            <supports>
+                <__types_cpt_supports_post>1</__types_cpt_supports_post>
+                <__types_cpt_supports_projects>1</__types_cpt_supports_projects>
+            </supports>
+            <id>category</id>
+            <__types_id>category</__types_id>
+            <__types_title>Categories</__types_title>
+            <checksum>6faa60fccce993209be9704f9475d6ac</checksum>
+        </taxonomy>
+        <taxonomy>
+            <labels>
+                <name>Tags</name>
+                <singular_name>Tag</singular_name>
+                <search_items>Search Tags</search_items>
+                <popular_items>Popular Tags</popular_items>
+                <all_items>All Tags</all_items>
+                <parent_item></parent_item>
+                <parent_item_colon></parent_item_colon>
+                <edit_item>Edit Tag</edit_item>
+                <view_item>View Tag</view_item>
+                <update_item>Update Tag</update_item>
+                <add_new_item>Add New Tag</add_new_item>
+                <new_item_name>New Tag Name</new_item_name>
+                <separate_items_with_commas>Separate tags with commas</separate_items_with_commas>
+                <add_or_remove_items>Add or remove tags</add_or_remove_items>
+                <choose_from_most_used>Choose from the most used tags</choose_from_most_used>
+                <not_found>No tags found.</not_found>
+                <no_terms>No tags</no_terms>
+                <items_list_navigation>Tags list navigation</items_list_navigation>
+                <items_list>Tags list</items_list>
+                <menu_name>Tags</menu_name>
+                <name_admin_bar>post_tag</name_admin_bar>
+            </labels>
+            <description></description>
+            <public>1</public>
+            <publicly_queryable>1</publicly_queryable>
+            <hierarchical></hierarchical>
+            <show_ui>1</show_ui>
+            <show_in_menu>1</show_in_menu>
+            <show_in_nav_menus>1</show_in_nav_menus>
+            <show_tagcloud>1</show_tagcloud>
+            <show_in_quick_edit>1</show_in_quick_edit>
+            <show_admin_column>1</show_admin_column>
+            <meta_box_cb>post_tags_meta_box</meta_box_cb>
+            <rewrite>
+                <with_front>1</with_front>
+                <hierarchical></hierarchical>
+                <ep_mask>1024</ep_mask>
+                <slug>tag</slug>
+            </rewrite>
+            <query_var>tag</query_var>
+            <update_count_callback></update_count_callback>
+            <_builtin>1</_builtin>
+            <cap>
+                <manage_terms>manage_categories</manage_terms>
+                <edit_terms>manage_categories</edit_terms>
+                <delete_terms>manage_categories</delete_terms>
+                <assign_terms>edit_posts</assign_terms>
+            </cap>
+            <name>post_tag</name>
+            <label>Tags</label>
+            <slug>post_tag</slug>
+            <supports>
+                <__types_cpt_supports_post>1</__types_cpt_supports_post>
+            </supports>
+            <id>post_tag</id>
+            <__types_id>post_tag</__types_id>
+            <__types_title>Tags</__types_title>
+            <checksum>389e2b04f1620827378dcd6cd87ecc08</checksum>
+        </taxonomy>
+        <taxonomy>
+            <icon>admin-post</icon>
+            <labels>
+                <name>Positions</name>
+                <singular_name>Position</singular_name>
+                <search_items>Search %s</search_items>
+                <popular_items>Popular %s</popular_items>
+                <all_items>All %s</all_items>
+                <parent_item>Parent %s</parent_item>
+                <parent_item_colon>Parent %s:</parent_item_colon>
+                <edit_item>Edit %s</edit_item>
+                <update_item>Update %s</update_item>
+                <add_new_item>Add New %s</add_new_item>
+                <new_item_name>New %s Name</new_item_name>
+                <separate_items_with_commas>Separate %s with commas</separate_items_with_commas>
+                <add_or_remove_items>Add or remove %s</add_or_remove_items>
+                <choose_from_most_used>Choose from the most used %s</choose_from_most_used>
+                <menu_name>%s</menu_name>
+            </labels>
+            <slug>position</slug>
+            <description></description>
+            <public>public</public>
+            <hierarchical>flat</hierarchical>
+            <rewrite>
+                <enabled>1</enabled>
+                <slug></slug>
+                <with_front>1</with_front>
+                <hierarchical>1</hierarchical>
+            </rewrite>
+            <show_ui>1</show_ui>
+            <show_in_nav_menus>1</show_in_nav_menus>
+            <show_tagcloud>1</show_tagcloud>
+            <query_var_enabled>1</query_var_enabled>
+            <query_var></query_var>
+            <update_count_callback></update_count_callback>
+            <meta_box_cb>
+                <callback></callback>
+            </meta_box_cb>
+            <_toolset_edit_last>1480564694</_toolset_edit_last>
+            <_wpcf_author_id>1</_wpcf_author_id>
+            <name></name>
+            <id>position</id>
+            <__types_id>position</__types_id>
+            <__types_title>Positions</__types_title>
+            <checksum>852f913425c67d9a9dd2304a4694ec51</checksum>
+        </taxonomy>
+    </taxonomies>
+</types>
