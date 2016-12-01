@@ -40,6 +40,7 @@ function gs_theme_setup() {
 	//Custom Image Sizes
 	add_image_size( 'featured-image', 225, 160, TRUE );
 	add_image_size( 'featured-projects', 450, 242, FALSE );
+	add_image_size( 'featured-page', 819, 715, FALSE );	
 	
 	// Enable Custom Background
 	//add_theme_support( 'custom-background' );
@@ -64,7 +65,7 @@ function gs_theme_setup() {
 	 * Add support for 3-column footer widgets
 	 * Change 3 for support of up to 6 footer widgets (automatically styled for layout)
 	 */
-	add_theme_support( 'genesis-footer-widgets', 3 );
+	//add_theme_support( 'genesis-footer-widgets', 3 );
 
 	/**
 	 * 08 Genesis Menus
@@ -156,21 +157,21 @@ function gs_register_sidebars() {
 		// 	'name'			=> __( 'Home Right Middle', CHILD_DOMAIN ),
 		// 	'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
 		// ),
-		// array(
-		// 	'id'			=> 'home-bottom',
-		// 	'name'			=> __( 'Home Bottom', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
-		// ),
+		array(
+			'id'			=> 'static-section-2',
+			'name'			=> __( 'Static section 2 Area Under Main Slider', CHILD_DOMAIN ),
+			'description'	=> __( 'This is the section for static content under Slider.', CHILD_DOMAIN ),
+		),
 		array(
 			'id'			=> 'featured-projects',
 			'name'			=> __( 'Featured Projects', CHILD_DOMAIN ),
 			'description'	=> __( 'Use featured posts to showcase your Featured Projects.', CHILD_DOMAIN ),
 		),
-		// array(
-		// 	'id'			=> 'after-post',
-		// 	'name'			=> __( 'After Post', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This will show up after every post.', CHILD_DOMAIN ),
-		// ),
+		array(
+			'id'			=> 'static-section-3',
+			'name'			=> __( 'Static Section 3', CHILD_DOMAIN ),
+			'description'	=> __( 'This will show up after Featured Projects on Home Page.', CHILD_DOMAIN ),
+		),
 		array(
 			'id'			=> 'footer-call-action',
 			'name'			=> __( 'Call to Action Footer', CHILD_DOMAIN ),
@@ -249,12 +250,26 @@ add_action('genesis_before_footer', 'gs_do_before_footer');
 function gs_do_before_footer() {
  	if(is_front_page()){
  		genesis_widget_area( 
+            'static-section-2', 
+                array(
+                        'before' => '<div id="static-section-2-area"><div class="static-section-2 widget-area">', 
+                        'after' => '</div></div>',
+                ) 
+        ); 		
+ 		genesis_widget_area( 
             'featured-projects', 
                 array(
                         'before' => '<div id="featured-projects-area"><div class="featured-projects widget-area">', 
                         'after' => '</div></div>',
                 ) 
         );
+ 		genesis_widget_area( 
+            'static-section-3', 
+                array(
+                        'before' => '<div class="clearfix"></div><div id="static-section-3-area"><div class="static-section-3 widget-area">', 
+                        'after' => '</div></div>',
+                ) 
+        );        
  		genesis_widget_area( 
             'j-s-letter', 
                 array(
@@ -374,4 +389,9 @@ function generate_featured_projects(){
     endif;
     $posts .= '</div><div class="view-more-link"><a href="./featured-projects/">View More</a></div></div>';
     return $posts;
+}
+//Short code for Learn more link goes to about page//
+add_shortcode('learn-more','generate_read_more');
+function generate_read_more(){
+	return '<div class="learn-more"><a class="read-more-link" href="./about/" >Learn More</a></div>';
 }

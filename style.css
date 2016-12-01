@@ -2880,12 +2880,53 @@ div#testimonial-slider div.item {
   height: 350px;
 }
 
+/* Learn More Shortcode  */
+div.learn-more {
+  padding: 20px 0px 40px 0px;
+  text-align: left;
+}
+div.learn-more a.read-more-link {
+  color: #8b0000;
+  border: 3px solid #8b0000;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+/** Static 2 Content **/
+#static-section-2-area {
+  background-image: url("./images/world-network.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+}
+#static-section-2-area h4.widget-title.widgettitle {
+  text-align: left;
+  font-size: 2em;
+  font-weight: normal;
+  padding: 52px 0px 0px 0px;
+}
+#static-section-2-area p {
+  text-align: left;
+  max-width: 520px;
+}
+#static-section-2-area div.learn-more {
+  text-align: left;
+}
+#static-section-2-area .widget-wrap {
+  max-width: 785px;
+  text-align: left;
+  margin: auto;
+}
+
 /*  Featured Projects */
 div#project-carousel {
   background-image: url("./images/building-schematic.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right;
+  -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
 }
 div#project-carousel div.view-more-link {
   width: 780px;
@@ -2906,7 +2947,7 @@ div#project-carousel .project-item {
   height: 242px;
 }
 div#project-carousel h4.widget-title.widgettitle {
-  margin-top: 10px;
+  padding-top: 10px;
 }
 div#project-carousel .carousel-inner {
   max-width: 780px;
@@ -2921,9 +2962,42 @@ div#project-carousel .hover-text {
   display: none;
 }
 
+/*  Static 3  */
+#static-section-3-area {
+  -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+}
+#static-section-3-area .static-section-3.widget-area section:nth-of-type(1) {
+  margin-left: 0px;
+  float: left;
+  max-width: 660px;
+}
+#static-section-3-area .static-section-3.widget-area section:nth-of-type(1) .widget-wrap .textwidget img {
+  max-width: 660px;
+}
+#static-section-3-area .static-section-3.widget-area section:nth-of-type(2) {
+  margin-left: 15.16667%;
+  float: left;
+  max-width: 520px;
+}
+#static-section-3-area .static-section-3.widget-area section:nth-of-type(2) p {
+  text-align: left;
+}
+#static-section-3-area .widget-wrap {
+  text-align: left;
+  max-width: 400px;
+}
+#static-section-3-area .widget-wrap h4 {
+  text-align: left;
+  font-size: 2.0em;
+  font-weight: normal;
+}
+
 /* Joyce and Steves Letter */
 div#j-s-letter-area {
   background: url("./images/top-left-bldg-plans.jpg") 0px 0px no-repeat, url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat;
+  -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
 }
 div#j-s-letter-area .j-s-letter {
   max-width: 980px;
