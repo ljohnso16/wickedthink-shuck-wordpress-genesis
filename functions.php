@@ -183,6 +183,11 @@ function gs_register_sidebars() {
 			'description'	=> __( 'This will show up before the footer.', CHILD_DOMAIN ),
 		),
 		array(
+			'id'			=> 'team-members',
+			'name'			=> __( 'Key Team Member Area', CHILD_DOMAIN ),
+			'description'	=> __( 'This will show up before the Testimonial Slider.', CHILD_DOMAIN ),
+		),		
+		array(
 			'id'			=> 'j-s-letter',
 			'name'			=> __( 'Joyce and Steves Letter', CHILD_DOMAIN ),
 			'description'	=> __( 'This will show up with the letter background and the Title of Joyce and Steve. Home Page Only', CHILD_DOMAIN ),
@@ -263,6 +268,7 @@ function gs_do_before_footer() {
                         'after' => '</div></div>',
                 ) 
         );
+
  		genesis_widget_area( 
             'static-section-3', 
                 array(
@@ -278,6 +284,13 @@ function gs_do_before_footer() {
                 ) 
         );
 	}
+ 	genesis_widget_area( 
+                'team-members', 
+                array(
+                        'before' => '<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area">', 
+                        'after' => '</div></div>',
+                ) 
+        );
  	genesis_widget_area( 
                 'testimonial-slider-area', 
                 array(
