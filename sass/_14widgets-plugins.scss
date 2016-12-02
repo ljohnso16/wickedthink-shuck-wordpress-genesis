@@ -361,34 +361,36 @@ background:
 		}
 	}
 }
-
-.soliloquy-container .soliloquy-image {
-    float: right !important;
-    margin-left: 100% !important;
-    width: auto !important;
-    height: 430px !important;
-
+//* Custom Sass for Featured Projects Widget
+.featured-projects-slider  {
+	padding:40px 0px !important;
+	.soliloquy-image {
+	    float: right !important;
+	    margin-left: 100% !important;
+	    width: auto !important;
+	    height: 430px !important;
+	}
 }
-.soliloquy-container .soliloquy-caption.soliloquy-caption-top{
+.featured-projects-slider .soliloquy-caption.soliloquy-caption-top{
 	width:55% !important;
 	float:left !important;
 }
 
-.soliloquy-container .soliloquy-caption .soliloquy-caption-inside{
+.featured-projects-slider .soliloquy-caption .soliloquy-caption-inside{
 	background-color:#fff  !important;
 	text-align:justify  !important;
 }
-.soliloquy-fc-slider .soliloquy-caption-inside .soliloquy-fc-title, .soliloquy-fc-slider .soliloquy-caption-inside .soliloquy-fc-title-link{
+.featured-projects-slider h2{
 	color:$color-cta !important;
 	text-align: left;
-	@include rem(font-size, 20px);
+	@include rem(font-size, 40px!important);
 	font-weight: normal !important;
 	padding: 30px 0px 0px 0px !important;
 	text-transform: capitalize !important;
 
 
 }
-.soliloquy-fc-caption{
+.featured-projects-slider .soliloquy-fc-caption{
     width: 60% !important;
     float: right !important;
 
