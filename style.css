@@ -5138,4 +5138,39 @@ div#j-s-letter-area .j-s-letter .widget-wrap .textwidget p {
   background-color: #8b0000;
 }
 
+.soliloquy-container .soliloquy-image {
+  float: right !important;
+  margin-left: 100% !important;
+  width: auto !important;
+  height: 430px !important;
+}
+
+.soliloquy-container .soliloquy-caption.soliloquy-caption-top {
+  width: 55% !important;
+  float: left !important;
+}
+
+.soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
+  background-color: #fff  !important;
+  text-align: justify  !important;
+}
+
+.soliloquy-fc-slider .soliloquy-caption-inside .soliloquy-fc-title, .soliloquy-fc-slider .soliloquy-caption-inside .soliloquy-fc-title-link {
+  color: #28315D !important;
+  text-align: left;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: normal !important;
+  padding: 30px 0px 0px 0px !important;
+  text-transform: capitalize !important;
+}
+
+.soliloquy-fc-caption {
+  width: 60% !important;
+  float: right !important;
+}
+.soliloquy-fc-caption p {
+  color: #8E8E8E !important;
+}
+
 /*# sourceMappingURL=style.css.map */
