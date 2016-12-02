@@ -138,11 +138,11 @@ function child_header_title( $title, $inside, $wrap ) {
 // Register Sidebars
 function gs_register_sidebars() {
 	$sidebars = array(
-		array(
-			'id'			=> 'static-section-2',
-			'name'			=> __( 'Static section 2 Area Under Main Slider', CHILD_DOMAIN ),
-			'description'	=> __( 'This is the section for static content under Slider.', CHILD_DOMAIN ),
-		),
+		// array(
+		// 	'id'			=> 'static-section-2',
+		// 	'name'			=> __( 'Static section 2 Area Under Main Slider', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This is the section for static content under Slider.', CHILD_DOMAIN ),
+		// ),
 		array(
 			'id'			=> 'featured-projects',
 			'name'			=> __( 'Featured Projects', CHILD_DOMAIN ),
@@ -158,16 +158,16 @@ function gs_register_sidebars() {
 			'name'			=> __( 'Call to Action Footer', CHILD_DOMAIN ),
 			'description'	=> __( 'This will show up before the footer.Default: Call to Action.', CHILD_DOMAIN ),
 		),		
-		array(
-			'id'			=> 'testimonial-slider-area',
-			'name'			=> __( 'testimonial Slider Area', CHILD_DOMAIN ),
-			'description'	=> __( 'This will show up before the footer.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'team-members',
-			'name'			=> __( 'Key Team Member Area', CHILD_DOMAIN ),
-			'description'	=> __( 'This will show up before the Testimonial Slider.', CHILD_DOMAIN ),
-		),		
+		// array(
+		// 	'id'			=> 'testimonial-slider-area',
+		// 	'name'			=> __( 'testimonial Slider Area', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This will show up before the footer.', CHILD_DOMAIN ),
+		// ),
+		// array(
+		// 	'id'			=> 'team-members',
+		// 	'name'			=> __( 'Key Team Member Area', CHILD_DOMAIN ),
+		// 	'description'	=> __( 'This will show up before the Testimonial Slider.', CHILD_DOMAIN ),
+		// ),		
 		array(
 			'id'			=> 'j-s-letter',
 			'name'			=> __( 'Joyce and Steves Letter', CHILD_DOMAIN ),
@@ -210,19 +210,19 @@ function footer_menu() {
 	);
 	gs_navigation( 'footer', $footer_menu_args );
 }
-// Add Widget Area After Post
-add_action('genesis_after_entry', 'gs_do_after_entry');
-function gs_do_after_entry() {
- 	if ( is_single() ) {
- 	genesis_widget_area( 
-                'after-post', 
-                array(
-                        'before' => '<aside id="after-post" class="after-post"><div class="home-widget widget-area">', 
-                        'after' => '</div></aside><!-- end #home-left -->',
-                ) 
-        );
- }
- }
+// // Add Widget Area After Post
+// add_action('genesis_after_entry', 'gs_do_after_entry');
+// function gs_do_after_entry() {
+//  	if ( is_single() ) {
+//  	genesis_widget_area( 
+//                 'after-post', 
+//                 array(
+//                         'before' => '<aside id="after-post" class="after-post"><div class="home-widget widget-area">', 
+//                         'after' => '</div></aside><!-- end #home-left -->',
+//                 ) 
+//         );
+//  }
+//  }
  add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
 function sp_footer_creds_filter( $creds ) {
 	$location = '<span class="footer-address">2 N. Cascade Avenue, Ste. 1280, Colorado Springs, CO 80903 </span>';
@@ -235,13 +235,13 @@ function sp_footer_creds_filter( $creds ) {
 add_action('genesis_before_footer', 'gs_do_before_footer');
 function gs_do_before_footer() {
  	if(is_front_page()){
- 		genesis_widget_area( 
-            'static-section-2', 
-                array(
-                        'before' => '<div id="static-section-2-area"><div class="static-section-2 widget-area">', 
-                        'after' => '</div></div>',
-                ) 
-        ); 		
+ 		// genesis_widget_area( 
+   //          'static-section-2', 
+   //              array(
+   //                      'before' => '<div id="static-section-2-area"><div class="static-section-2 widget-area">', 
+   //                      'after' => '</div></div>',
+   //              ) 
+   //      ); 		
  		genesis_widget_area( 
             'featured-projects', 
                 array(
@@ -265,20 +265,15 @@ function gs_do_before_footer() {
                 ) 
         );
 	}
- 	genesis_widget_area( 
-                'team-members', 
-                array(
-                        'before' => '<div id="team-members"><div class="team-members-area widget-area">', 
-                        'after' => '</div></div>',
-                ) 
-        );
- 	genesis_widget_area( 
-                'testimonial-slider-area', 
-                array(
-                        'before' => '<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area">', 
-                        'after' => '</div></div>',
-                ) 
-        );
+
+//outputs the area intended to contain the testimonals and things above it
+    $post_id = get_the_ID();
+	$ourshortcode = types_render_field('lower-widget-area', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));	
+	if(!empty($ourshortcode)){
+		echo $ourshortcode;
+	}
+
+		
  	genesis_widget_area( 
                 'footer-call-action', 
                 array(
@@ -309,8 +304,9 @@ function generate_testimonial_slider(){
     $i = 0;
     $query = new WP_Query( $args );
     $quote_icon_url = get_stylesheet_directory_uri().'/images/right-side-quote.png';
-    $posts = '<div class="wrap">
-    
+    $posts = '
+	<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area">
+    <div class="wrap">
     <div id="testimonial-slider" class="carousel slide" data-interval="3000" data-ride="carousel">
 
 	    <div class="carousel-inner" role="listbox">';
@@ -342,6 +338,7 @@ function generate_testimonial_slider(){
 			}
             $i++;
         endwhile;
+        $posts.='</div></div>';
         wp_reset_postdata();
     endif;
     return $posts;
@@ -404,12 +401,19 @@ function generate_read_more(){
 add_shortcode('key-team-members','generate_key_team_members_widget');
 function generate_key_team_members_widget(){
     $args = array(
-        'post_type' => 'member',
-    	'posts_per_page' => 6
+        'post_type' 		=> 'member',
+    	'posts_per_page'    =>  6,
+    	'order' 			=>  'ASC'
     );
     $i = 0;
     $query = new WP_Query( $args );
-    $posts = '<div class="row">
+    
+    if(empty($query->have_posts())){
+		return '<div class="wrap"><p>No Posts</p></div>';
+    }
+    $posts = '
+	<div id="team-members"><div class="team-members-area widget-area">
+    <div class="row">
     <div class="first one-third team-member">';
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
             $post_id = get_the_ID();		
@@ -457,7 +461,7 @@ function generate_key_team_members_widget(){
 
             $i++;
         endwhile;
-        $posts .= '<div class="clearfix"></div></div>';
+        $posts .= '<div class="clearfix"></div></div></div></div>';
         wp_reset_postdata();
     endif;
 
