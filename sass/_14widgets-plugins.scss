@@ -79,6 +79,8 @@
 	//background
 	body.contact{
 		div.site-inner{
+			-webkit-box-shadow: inset 0px 7px 15px -5px rgba(0,0,0,0.3);
+			box-shadow: inset 0px 7px 15px -5px rgba(0,0,0,0.3);     		
 			background-image:url('./images/world-network.jpg');    
 			background-size: cover;
     		background-repeat: no-repeat;
@@ -136,6 +138,9 @@ div.learn-more {
 }	
 
 /** Static 2 Content **/
+#static-section-2-area .textwidget {
+    text-align: left;
+}
 #static-section-2-area {
 			background-image:url('./images/world-network.jpg');    
 			background-size: cover;
@@ -149,7 +154,7 @@ div.learn-more {
 		font-weight: normal;
 		padding: 52px 0px 0px 0px;
 	}
-	p{
+	div.text-widget{
 		text-align:left;
 		max-width:520px;				
 	}
@@ -301,3 +306,55 @@ background:
 		}
 	}
 }	
+/*  Key Team Membembers Widget */
+#team-members {
+	.row:nth-of-type(1) {
+		padding-top:2%;
+	}
+	.row {
+	    max-width: 900px;
+	    margin: auto;
+		.team-member {
+			.pic {
+				//background-color:$color-cta;
+			    position:relative;
+			    display:inline-block;				
+			}
+			.pic:hover:after{
+			    content:"\A";
+			    width:100%;
+			    height:97%;
+			    background:$color-cta;
+			    opacity: 0.5;
+			    position:absolute;
+			    top:0;
+			    left:0;
+			}
+			.name {
+				color: $color-cta;
+			    font-size: 20px;
+			    margin: 0px;
+			    padding: 0px;
+			    line-height: 12px;
+			    font-weight: bold;
+			}
+			.position-title {
+			    font-style: italic;
+			}
+			div.read-bio-container {
+				padding:10px 0px 20px 0px;
+				a.read-bio {
+				    color: $maroon;
+				    border: 3px solid $maroon;
+				    border-radius: 6px;
+				    padding: 4px;
+				}
+				a.read-bio:hover {
+				    color: transparent;
+				    border-color:$maroon;
+				    background-color: $maroon;
+				}				
+			}			
+		}
+	}
+}

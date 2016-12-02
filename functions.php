@@ -41,6 +41,7 @@ function gs_theme_setup() {
 	add_image_size( 'featured-image', 225, 160, TRUE );
 	add_image_size( 'featured-projects', 450, 242, FALSE );
 	add_image_size( 'featured-page', 819, 715, FALSE );	
+	add_image_size( 'key-team-members', 238, 329, FALSE );
 	
 	// Enable Custom Background
 	//add_theme_support( 'custom-background' );
@@ -137,26 +138,6 @@ function child_header_title( $title, $inside, $wrap ) {
 // Register Sidebars
 function gs_register_sidebars() {
 	$sidebars = array(
-		// array(
-		// 	'id'			=> 'home-top',
-		// 	'name'			=> __( 'Home Top', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This is the top homepage section.', CHILD_DOMAIN ),
-		// ),
-		// array(
-		// 	'id'			=> 'home-middle-01',
-		// 	'name'			=> __( 'Home Left Middle', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This is the homepage left section.', CHILD_DOMAIN ),
-		// ),
-		// array(
-		// 	'id'			=> 'home-middle-02',
-		// 	'name'			=> __( 'Home Middle Middle', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This is the homepage middle section.', CHILD_DOMAIN ),
-		// ),
-		// array(
-		// 	'id'			=> 'home-middle-03',
-		// 	'name'			=> __( 'Home Right Middle', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This is the homepage right section.', CHILD_DOMAIN ),
-		// ),
 		array(
 			'id'			=> 'static-section-2',
 			'name'			=> __( 'Static section 2 Area Under Main Slider', CHILD_DOMAIN ),
@@ -287,7 +268,7 @@ function gs_do_before_footer() {
  	genesis_widget_area( 
                 'team-members', 
                 array(
-                        'before' => '<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area">', 
+                        'before' => '<div id="team-members"><div class="team-members-area widget-area">', 
                         'after' => '</div></div>',
                 ) 
         );
@@ -418,4 +399,67 @@ function generate_featured_projects(){
 add_shortcode('learn-more','generate_read_more');
 function generate_read_more(){
 	return '<div class="learn-more"><a class="read-more-link" href="./about/" >Learn More</a></div>';
+}
+/*  Key Team Members Widget  */
+add_shortcode('key-team-members','generate_key_team_members_widget');
+function generate_key_team_members_widget(){
+    $args = array(
+        'post_type' => 'member',
+    	'posts_per_page' => 6
+    );
+    $i = 0;
+    $query = new WP_Query( $args );
+    $posts = '<div class="row">
+    <div class="first one-third team-member">';
+    if($query->have_posts()):while($query->have_posts()):$query->the_post();
+            $post_id = get_the_ID();		
+			$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'key-team-members',true );
+			$featured_image = '<img src="'.$thumbnail[0].'">';
+            $member_name = get_the_title($post_id);
+            $position_title = types_render_field('title', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
+            $bio = get_the_content();
+			if($i==3) {
+				$posts .= '<div class="row">
+							<div class="first one-third team-member">';
+			}
+			// if($i==3){
+			// 	$posts .= '<div class="first one-third team-member">';
+			// }
+			elseif($i>0 && $i!=3){
+				$posts .= '<div class="one-third team-member">';	
+			}
+			$posts .=
+				'<a href="#" data-toggle="modal" data-target="#bio-0'.$i.'"><div class="pic">'.$featured_image.'</div></a>
+				<div class="name">'.$member_name.'</div>
+				<div class="position-title">'.$position_title.'</div>
+				<div class="read-bio-container"><a href="#" class="read-bio" data-toggle="modal" data-target="#bio-0'.$i.'">Read Bio</a></div>';
+				//hidden modal must go here, triggers are already drawn
+			$posts .= '
+						<div class="modal fade" id="bio-0'.$i.'" tabindex="-1" role="dialog" aria-labelledby="bio-0'.$i.'Label" aria-hidden="true">
+						  <div class="modal-dialog modal-lg">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="bio-0'.$i.'Label">'.$member_name.' Bio</h4>
+						      </div>
+						      <div class="modal-body">
+						        '.$bio.'
+						      </div>
+						      <div class="modal-footer">
+						      </div>
+						    </div>
+						  </div>
+						</div>';
+			$posts .= '</div>';
+			if($i==2) {
+				$posts .= '<div class="clearfix"></div></div>';
+			}
+
+            $i++;
+        endwhile;
+        $posts .= '<div class="clearfix"></div></div>';
+        wp_reset_postdata();
+    endif;
+
+    return $posts;
 }
