@@ -42,6 +42,7 @@ function gs_theme_setup() {
 	add_image_size( 'featured-projects', 450, 242, FALSE );
 	add_image_size( 'featured-page', 819, 715, FALSE );	
 	add_image_size( 'key-team-members', 238, 329, FALSE );
+	add_image_size( 'archived-projects', 197, 253, true );	
 	
 	// Enable Custom Background
 	//add_theme_support( 'custom-background' );
@@ -210,19 +211,12 @@ function footer_menu() {
 	);
 	gs_navigation( 'footer', $footer_menu_args );
 }
-// // Add Widget Area After Post
-// add_action('genesis_after_entry', 'gs_do_after_entry');
-// function gs_do_after_entry() {
-//  	if ( is_single() ) {
-//  	genesis_widget_area( 
-//                 'after-post', 
-//                 array(
-//                         'before' => '<aside id="after-post" class="after-post"><div class="home-widget widget-area">', 
-//                         'after' => '</div></aside><!-- end #home-left -->',
-//                 ) 
-//         );
-//  }
-//  }
+   function new_excerpt_more($more) {
+		global $post;
+		return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
+   }
+   add_filter('excerpt_more', 'new_excerpt_more');
+
  add_filter('genesis_footer_creds_text', 'sp_footer_creds_filter');
 function sp_footer_creds_filter( $creds ) {
 	$location = '<span class="footer-address">2 N. Cascade Avenue, Ste. 1280, Colorado Springs, CO 80903 </span>';
@@ -466,4 +460,50 @@ function generate_key_team_members_widget(){
     endif;
 
     return $posts;
+}
+
+add_shortcode('archived-projects','generate_archived_projects');
+function generate_archived_projects(){
+	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;	
+	$query_args = array(
+		'post_type' => 'projects',
+		'category_name' => 'archived',
+		'posts_per_page' => 3,
+		'paged' => $paged
+	);
+	$the_query = new WP_Query( $query_args );
+
+	$max = $the_query->max_num_pages;
+    wp_enqueue_script( 'ajax-pagination',  CHILD_JS . '/ajax-pagination.js', array( 'jquery' ), '1.0', true );
+    wp_localize_script(
+		'ajax-pagination',
+		'passedvar',
+		array(
+			'startPage' => $paged,
+			'maxPages' => $max,
+			'nextLink' => next_posts($max, false)
+		)
+	);
+
+	$posts = '
+					<div class="archived-projects-area widget-area" id="archived-projects-area">
+					<h4 class="widget-title widgettitle">Archived Projects</h4>';
+	if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); // run the loop 
+		$thumb_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'archived-projects', true);
+		$featured_image = '<img src="'.$thumb_url[0].'">';
+
+		$posts .= '<article class="archived-project">';
+		$posts .= '<div class="alignleft">'.$featured_image.'</div>';
+		$posts .= '<div class="alignright"><h3> '.get_the_title(get_the_ID()).' </h3>';
+		$posts .= '<div class="author"> by <span>'.get_the_author().'</span></div>';
+		$posts .= '<div class="date">'.get_the_date('F j, Y', get_the_ID()).'</div>';
+		$posts .= '<div class="excerpt">'.get_the_excerpt().'</div>';
+
+		$posts .= '</div><div class="clearfix"></div>';
+
+		$posts .= '</article>';
+	endwhile;
+	$posts .= '</div><div id="load-more-link"></div>';
+	endif;
+	return $posts;
 }

@@ -361,8 +361,8 @@ background:
 		}
 	}
 }
-//* Custom Sass for Featured Projects Widget
-.featured-projects-slider  {
+//* Custom Sass for Featured Projects Slider on about pag
+e.featured-projects-slider  {
 	padding:40px 0px !important;
 	.soliloquy-image {
 	    float: right !important;
@@ -398,3 +398,43 @@ background:
  		color:$textColor !important;
  	}
  }
+/* Archived Projects */ 
+ 	div#load-more-link {
+    	margin: auto;
+ 	   text-align: center;
+	}
+
+ .archived-project{
+	margin: 0px 25% 0px 0px;
+ 	div.alignleft{
+ 		img{
+ 		}
+		max-width:50%;
+		margin-left: 35%;
+ 	}
+ 	div.alignright{
+		max-width:50%;
+		text-align: left;
+		h3{
+			margin-bottom:0px !important;
+			font-weight: normal;
+			color:$textColor !important;
+			font-style: italic;
+		}
+		.author{
+			font-style: italic;
+    		width: 20%;
+    		border-bottom: 4px solid lightblue;			
+			span{
+				text-transform: capitalize;
+			}
+		}
+		.excerpt{
+			border-bottom: 1px solid $color-base;
+    		margin-bottom: 100px;
+    		margin-top: 15px;
+
+		}
+ 	}
+ }
+ //add_image_size( 'archived-projects', 197, 253, true );	

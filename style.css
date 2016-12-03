@@ -5138,10 +5138,10 @@ div#j-s-letter-area .j-s-letter .widget-wrap .textwidget p {
   background-color: #8b0000;
 }
 
-.featured-projects-slider {
+e.featured-projects-slider {
   padding: 40px 0px !important;
 }
-.featured-projects-slider .soliloquy-image {
+e.featured-projects-slider .soliloquy-image {
   float: right !important;
   margin-left: 100% !important;
   width: auto !important;
@@ -5174,6 +5174,43 @@ div#j-s-letter-area .j-s-letter .widget-wrap .textwidget p {
 }
 .featured-projects-slider .soliloquy-fc-caption p {
   color: #8E8E8E !important;
+}
+
+/* Archived Projects */
+div#load-more-link {
+  margin: auto;
+  text-align: center;
+}
+
+.archived-project {
+  margin: 0px 25% 0px 0px;
+}
+.archived-project div.alignleft {
+  max-width: 50%;
+  margin-left: 35%;
+}
+.archived-project div.alignright {
+  max-width: 50%;
+  text-align: left;
+}
+.archived-project div.alignright h3 {
+  margin-bottom: 0px !important;
+  font-weight: normal;
+  color: #8E8E8E !important;
+  font-style: italic;
+}
+.archived-project div.alignright .author {
+  font-style: italic;
+  width: 20%;
+  border-bottom: 4px solid lightblue;
+}
+.archived-project div.alignright .author span {
+  text-transform: capitalize;
+}
+.archived-project div.alignright .excerpt {
+  border-bottom: 1px solid #E5EBE6;
+  margin-bottom: 100px;
+  margin-top: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
