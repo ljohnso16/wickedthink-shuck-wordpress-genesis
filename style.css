@@ -4474,6 +4474,11 @@ nav#footer-nav {
   margin-bottom: 2.6rem;
 }
 
+/* home variant */
+.home .entry-content p {
+  max-width: 640px !important;
+}
+
 /* After Post */
 .after-post {
   background: #f2f2f2;

@@ -1,6 +1,10 @@
 .entry-content p {
 	@include rem(margin-bottom, 26px);
 }
+/* home variant */
+.home .entry-content p{
+	max-width:640px !important;
+}
 
 /* After Post */
 .after-post {
