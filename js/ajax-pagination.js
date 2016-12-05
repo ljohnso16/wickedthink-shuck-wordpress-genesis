@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 	 */
 	if(pageNum <= max) {
 		$('#archived-projects-area').append('<div class="archived-projects-placeholder-'+ pageNum +'"></div>');
-		$('#load-more-link').append('<p id="load-projects"><button class="btn btn-default">Load More Archived Projects</button></p>');	
+		$('#load-more-link').append('<p id="load-projects"><button class="btn btn-default" id="loadit">Load More Archived Projects</button></p>');	
 	}
 	$('#load-projects button').click(function() {
 		// Are there more posts to load?

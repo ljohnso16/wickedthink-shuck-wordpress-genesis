@@ -139,41 +139,17 @@ function child_header_title( $title, $inside, $wrap ) {
 // Register Sidebars
 function gs_register_sidebars() {
 	$sidebars = array(
-		// array(
-		// 	'id'			=> 'static-section-2',
-		// 	'name'			=> __( 'Static section 2 Area Under Main Slider', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This is the section for static content under Slider.', CHILD_DOMAIN ),
-		// ),
+
 		array(
 			'id'			=> 'featured-projects',
 			'name'			=> __( 'Featured Projects', CHILD_DOMAIN ),
-			'description'	=> __( 'Use featured posts to showcase your Featured Projects.', CHILD_DOMAIN ),
-		),
-		array(
-			'id'			=> 'static-section-3',
-			'name'			=> __( 'Static Section 3', CHILD_DOMAIN ),
-			'description'	=> __( 'This will show up after Featured Projects on Home Page.', CHILD_DOMAIN ),
+			'description'	=> __( 'This will show up as Featured Projects on Home Page Only. Use Short Code: [featured-projects]', CHILD_DOMAIN ),
 		),
 		array(
 			'id'			=> 'footer-call-action',
 			'name'			=> __( 'Call to Action Footer', CHILD_DOMAIN ),
 			'description'	=> __( 'This will show up before the footer.Default: Call to Action.', CHILD_DOMAIN ),
-		),		
-		// array(
-		// 	'id'			=> 'testimonial-slider-area',
-		// 	'name'			=> __( 'testimonial Slider Area', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This will show up before the footer.', CHILD_DOMAIN ),
-		// ),
-		// array(
-		// 	'id'			=> 'team-members',
-		// 	'name'			=> __( 'Key Team Member Area', CHILD_DOMAIN ),
-		// 	'description'	=> __( 'This will show up before the Testimonial Slider.', CHILD_DOMAIN ),
-		// ),		
-		array(
-			'id'			=> 'j-s-letter',
-			'name'			=> __( 'Joyce and Steves Letter', CHILD_DOMAIN ),
-			'description'	=> __( 'This will show up with the letter background and the Title of Joyce and Steve. Home Page Only', CHILD_DOMAIN ),
-		),		
+		)		
 	);
 	foreach ( $sidebars as $sidebar )
 		genesis_register_sidebar( $sidebar );
@@ -213,7 +189,7 @@ function footer_menu() {
 }
    function new_excerpt_more($more) {
 		global $post;
-		return '… <a href="'. get_permalink($post->ID) . '">' . 'Read More &raquo;' . '</a>';
+		return '<a href="'. get_permalink($post->ID) . '" class="clearfix">' . 'Read More' . '</a>';
    }
    add_filter('excerpt_more', 'new_excerpt_more');
 
@@ -224,56 +200,38 @@ function sp_footer_creds_filter( $creds ) {
 	return $creds;
 }
 
-// Add Widget Area Before Footer
+// Add Widget Areas
 
 add_action('genesis_before_footer', 'gs_do_before_footer');
 function gs_do_before_footer() {
- 	if(is_front_page()){
- 		// genesis_widget_area( 
-   //          'static-section-2', 
-   //              array(
-   //                      'before' => '<div id="static-section-2-area"><div class="static-section-2 widget-area">', 
-   //                      'after' => '</div></div>',
-   //              ) 
-   //      ); 		
+	$post_id = get_the_ID();
+ 	if(is_front_page()){		
  		genesis_widget_area( 
-            'featured-projects', 
-                array(
-                        'before' => '<div id="featured-projects-area"><div class="featured-projects widget-area">', 
-                        'after' => '</div></div>',
-                ) 
-        );
-
- 		genesis_widget_area( 
-            'static-section-3', 
-                array(
-                        'before' => '<div class="clearfix"></div><div id="static-section-3-area"><div class="static-section-3 widget-area">', 
-                        'after' => '</div></div>',
-                ) 
-        );        
- 		genesis_widget_area( 
-            'j-s-letter', 
-                array(
-                        'before' => '<div id="j-s-letter-area"><div class="j-s-letter widget-area"><h3 class="header-title">A Letter from Joyce and Steve</h3>', 
-                        'after' => '<img id="sig" src="'.get_stylesheet_directory_uri().'/images/joyse-steve-signatures.png" /></div></div>',
-                ) 
-        );
+	        'featured-projects', 
+	        array(
+	                'before' => '<div id="project-carousel" class="carousel slide" data-ride="carousel">', 
+	                'after' => '</div>',
+	        ) 
+	    );        
 	}
-
-//outputs the area intended to contain the testimonals and things above it
-    $post_id = get_the_ID();
-	$ourshortcode = types_render_field('lower-widget-area', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));	
-	if(!empty($ourshortcode)){
-		echo $ourshortcode;
-	}
-
-		
+	$staticsection1 = types_render_field('static-content-area-1', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));	
+	if(!empty($staticsection1)){
+		echo '<div id="static-section-1-area"><div class="area-wrap">'.$staticsection1.'<div class="clearfix"></div></div></div>';
+	}	
+	$staticsection2 = types_render_field('static-content-area-2-blueprints', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));	
+	if(!empty($staticsection2)){
+		echo '<div class="" id="j-s-letter-area"><div class="j-s-letter">'.$staticsection2.'</div></div>';
+	}    
+	$lowerwidgetarea = types_render_field('lower-widget-area', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));	
+	if(!empty($lowerwidgetarea)){
+		echo '<div class="lower-widget-area">'.$lowerwidgetarea.'</div>';
+	}		
  	genesis_widget_area( 
-                'footer-call-action', 
-                array(
-                        'before' => '<div id="footer-call-action"><div class="footer-call-action widget-area">', 
-                        'after' => '</div></div>',
-                ) 
+	    'footer-call-action', 
+		    array(
+		            'before' => '<div id="footer-call-action"><div class="footer-call-action widget-area">', 
+		            'after' => '</div></div>',
+		    ) 
         ); 	
  	
  }
@@ -299,8 +257,8 @@ function generate_testimonial_slider(){
     $query = new WP_Query( $args );
     $quote_icon_url = get_stylesheet_directory_uri().'/images/right-side-quote.png';
     $posts = '
-	<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area">
-    <div class="wrap">
+	<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area wrap">
+    
     <div id="testimonial-slider" class="carousel slide" data-interval="3000" data-ride="carousel">
 
 	    <div class="carousel-inner" role="listbox">';
@@ -332,7 +290,7 @@ function generate_testimonial_slider(){
 			}
             $i++;
         endwhile;
-        $posts.='</div></div>';
+        $posts.='</div></div></div></div>';
         wp_reset_postdata();
     endif;
     return $posts;
@@ -346,8 +304,8 @@ function generate_featured_projects(){
 		'category_name' => 'featured');
     $i = 0;
     $posts='
-    	<div id="project-carousel" class="carousel slide" data-ride="carousel">
-        <h4 class="widget-title widgettitle">Featured Projects</h4>
+    	
+        
         <div class="carousel-inner">';
     $query = new WP_Query( $args );
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
@@ -383,7 +341,7 @@ function generate_featured_projects(){
         endwhile;
         wp_reset_postdata();
     endif;
-    $posts .= '</div><div class="view-more-link"><a href="./featured-projects/">View More</a></div></div>';
+    $posts .= '</div><div class="view-more-link"><a href="./featured-projects/">View More</a>';
     return $posts;
 }
 //Short code for Learn more link goes to about page//
@@ -407,6 +365,7 @@ function generate_key_team_members_widget(){
     }
     $posts = '
 	<div id="team-members"><div class="team-members-area widget-area">
+	<h4>Key Team Members</h4>
     <div class="row">
     <div class="first one-third team-member">';
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
@@ -420,9 +379,6 @@ function generate_key_team_members_widget(){
 				$posts .= '<div class="row">
 							<div class="first one-third team-member">';
 			}
-			// if($i==3){
-			// 	$posts .= '<div class="first one-third team-member">';
-			// }
 			elseif($i>0 && $i!=3){
 				$posts .= '<div class="one-third team-member">';	
 			}
@@ -431,7 +387,6 @@ function generate_key_team_members_widget(){
 				<div class="name">'.$member_name.'</div>
 				<div class="position-title">'.$position_title.'</div>
 				<div class="read-bio-container"><a href="#" class="read-bio" data-toggle="modal" data-target="#bio-0'.$i.'">Read Bio</a></div>';
-				//hidden modal must go here, triggers are already drawn
 			$posts .= '
 						<div class="modal fade" id="bio-0'.$i.'" tabindex="-1" role="dialog" aria-labelledby="bio-0'.$i.'Label" aria-hidden="true">
 						  <div class="modal-dialog modal-lg">
