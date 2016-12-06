@@ -509,3 +509,64 @@ div#static-section-1-area {
  #loadit{
  	background-color:lightblue !important;
  }
+
+ .soliloquy-container .soliloquy-caption {
+    position: absolute !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 100 !important;
+}
+ 
+.soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
+    display: table !important;
+        width: 100% !important;
+        height: 100% !important;
+    text-align: center !important;
+    padding: 6% 0 35px !important;
+        background-color: transparent !important;
+}
+ 
+.soliloquy-container .soliloquy-caption-inside .soliloquy-caption-wrap {
+        display: table-cell !important;
+        vertical-align: middle !important;
+}
+ 
+.soliloquy-container .soliloquy-caption h1 {
+    color: #fff !important;
+    font-size: 26px !important;
+    margin: 0 0 50px !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25) !important;
+        line-height: 1.25em !important;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+}
+ 
+.soliloquy-container .soliloquy-caption a.soliloquy-button {
+        color: #fff !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+    background-color: #ff3700 !important;
+    border: 3px solid #fff !important;
+    padding: 15px 20px !important;
+    font-size: 14px !important;
+}
+ 
+@media (min-width: 768px) and (max-width: 1024px) {
+ 
+    .soliloquy-container .soliloquy-caption {
+        bottom: 13px !important;
+    }
+ 
+}
+ 
+@media (max-width: 600px) {
+ 
+        /** Hide the caption and control nav for small devices since they can swipe slides */
+    .soliloquy-container .soliloquy-control-nav,
+        .soliloquy-container .soliloquy-caption {
+        display: none !important;
+    }
+ 
+}

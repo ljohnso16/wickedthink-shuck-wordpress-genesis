@@ -345,10 +345,23 @@ function generate_featured_projects(){
     return $posts;
 }
 //Short code for Learn more link goes to about page//
+add_shortcode('sol-cap','generate_sol_cap');
+function generate_sol_cap(){
+	return '
+		<div class="soliloquy-caption">
+			<div class="sol-slide-in">Shuck Communities...</div>
+			<div class="sol-slide-down"><p>The experiance you need for your next development project.</p></div>
+			<div class="contact-btn"><button type="button" class="btn btn-secondary sol-btn" href="http://schuck.staging.wpengine.com/contact/">Contact Us Today</button></div>
+		</div>';
+}
+
+/* Slide to Animate */
+
 add_shortcode('learn-more','generate_read_more');
 function generate_read_more(){
 	return '<div class="learn-more"><a class="read-more-link" href="./about/" >Learn More</a></div>';
 }
+
 /*  Key Team Members Widget  */
 add_shortcode('key-team-members','generate_key_team_members_widget');
 function generate_key_team_members_widget(){

@@ -72,6 +72,9 @@ function gs_register_scripts() {
 	wp_register_style( 'gs-pretty-photo', CHILD_CSS . '/' . gs_script_suffix( 'prettyPhoto', 'css' ), array(), '3.1.4' );
 	wp_register_script( 'gs-pretty-photo', CHILD_JS . '/' . gs_script_suffix( 'jquery.prettyPhoto', 'js' ), array( 'jquery' ), '3.1.4' );
 	
+	//attrchange plugin
+	// wp_register_script( 'attrchange', CHILD_JS . '/' . 'attrchange', array( 'jquery' ));
+
 	/** Common, site specific */
 	wp_register_script( 'gs-common', CHILD_JS . '/' . gs_script_suffix( 'common' ), array( 'jquery' ) , CHILD_THEME_VERSION );
 
@@ -107,6 +110,7 @@ function gs_enqueue_scripts() {
 	wp_enqueue_script( 'gs-twitter-bootstrap-cdn' );
 	wp_enqueue_script( 'typekit' );
 	wp_enqueue_script( 'gs-common' );
+	// wp_enqueue_script( 'attrchange' );
 
 
 	

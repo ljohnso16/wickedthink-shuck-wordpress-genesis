@@ -28,7 +28,52 @@ $('.project-item').hover(
         function(){
             $(this).find('.hover-text').fadeOut(100);
         }
-    );
+    );   
+
+
+        var myVar;
+        var countit;
+        countit = 0;
+
+        function myAnimate() {
+            myVar = setInterval(slideit, 2450);
+        }    
+        function slideit() {
+            // if(!!$('#soliloquy-66')){
+               $('.soliloquy-active-slide .sol-slide-in').animate({ left: '+=63%' }, 600, 'swing');               
+               $('.soliloquy-active-slide .sol-slide-down').animate({ right: '+=63%' }, 600, 'swing');               
+            // }
+
+            
+            //this moves the First Div to bounce around
+            $(".soliloquy-active-slide .sol-slide-in").animate({ // Text out
+               left: "-200px"
+            }, 500, function () {
+                $(this).parent().animate({ // Next  Image
+                    
+                }, 500, function () {
+                    $(this).children(".soliloquy-active-slide .sol-slide-in").animate({ // Text in
+                       // opacity: 1,
+                            "left": "-20px"
+                    }, 500);
+                });
+            });
+            //this moves the First Div to bounce around
+            $(".soliloquy-active-slide .sol-slide-down").animate({ // Text out
+               left: "200px"
+            }, 500, function () {
+                $(this).parent().animate({ // Next  Image
+                    
+                }, 500, function () {
+                    $('.soliloquy-active-slide .sol-slide-down').animate({ // Text in
+                       // opacity: 1,
+                            "left": "0px"
+                    }, 500);
+                });
+            });
+        }
+
+        myAnimate();
 
 });
 try{Typekit.load({ async: true });}catch(e){}
