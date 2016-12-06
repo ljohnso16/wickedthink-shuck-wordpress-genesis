@@ -257,7 +257,7 @@ function generate_testimonial_slider(){
     $query = new WP_Query( $args );
     $quote_icon_url = get_stylesheet_directory_uri().'/images/right-side-quote.png';
     $posts = '
-	<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area wrap">
+	<div id="testimonial-slider-area"><div class="testimonial-slider-area widget-area">
     
     <div id="testimonial-slider" class="carousel slide" data-interval="3000" data-ride="carousel">
 
@@ -276,6 +276,7 @@ function generate_testimonial_slider(){
 			}            
             if(!empty($content)){
 	            $posts .='            
+			    	   <div class="clearfix"></div>
 			    	   <img src="'.$quote_icon_url.'" alt="Testimonial">
 			    	   <div class="carousel-caption">
 			        	

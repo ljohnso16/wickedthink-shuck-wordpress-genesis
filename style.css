@@ -4404,6 +4404,7 @@ h1.entry-title {
 nav.nav-primary {
   max-width: 586px;
   float: left;
+  font-size: smaller;
 }
 
 nav#footer-nav {
@@ -4966,6 +4967,7 @@ div#testimonial-slider div.item img {
   padding-top: 30px;
 }
 div#testimonial-slider .carousel-caption {
+  position: static !important;
   padding: 0px !important;
   bottom: 0px !important;
 }
@@ -4975,9 +4977,12 @@ div#testimonial-slider .carousel-caption .excerpt {
   font-size: 2rem;
   font-family: "ff-tisa-sans-web-pro", sans-serif;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
+  max-width: 640px;
+  margin: auto !important;
 }
 div#testimonial-slider .carousel-caption p {
+  text-align: center;
   color: #fff !important;
   margin: 0px !important;
 }
@@ -4987,7 +4992,7 @@ div#testimonial-slider .carousel-caption p.testimonial-comapny-name {
   padding-bottom: 30px;
 }
 div#testimonial-slider div.item {
-  height: 350px;
+  min-height: 350px;
 }
 
 /* Learn More Shortcode  */
@@ -5156,7 +5161,7 @@ div#j-s-letter-area {
 div#j-s-letter-area .j-s-letter {
   max-width: 980px;
   margin: auto;
-  padding: 114px 0px;
+  padding: 400px 0% 0% 13px;
 }
 div#j-s-letter-area .j-s-letter h4 {
   color: #757575 !important;
@@ -5362,7 +5367,7 @@ div#load-more-link {
   width: 100% !important;
   height: 100% !important;
   text-align: center !important;
-  padding: 6% 0 35px !important;
+  padding: 3% 0px 35px 0px !important;
   background-color: transparent !important;
 }
 

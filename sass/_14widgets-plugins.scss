@@ -98,6 +98,7 @@
 		    padding-top:30px;
 		}
 		.carousel-caption{
+			position:static !important;
 			padding: 0px !important;
 			bottom: 0px !important;
 			.excerpt{
@@ -105,10 +106,12 @@
 				@include rem(font-size, 20px);
 				font-family: $TisaSansPro;
 				font-weight: bold;
-				text-align:left;
-				//font-si
+				text-align:center;
+				max-width: 640px;
+				margin:auto !important;
 			}
-			p{
+			p{	
+				text-align: center;
 				color: #fff !important;
 				margin: 0px !important;
 
@@ -117,11 +120,10 @@
 				font-size: smaller;
 				line-height: 0px;
 				padding-bottom: 30px;
-
 			}		
 		}
 		div.item{
-			height: 350px;
+			min-height: 350px;
 		}
 
 	}
@@ -306,7 +308,7 @@ div#static-section-1-area {
 		.j-s-letter{
 		    max-width: 980px;
 		    margin: auto;
-			padding: 114px 0px;
+			padding: 400px 0% 0% 13px;
 			h4{
 			    color: $textColor !important;
 			    font-weight: normal;
@@ -523,7 +525,7 @@ div#static-section-1-area {
         width: 100% !important;
         height: 100% !important;
     text-align: center !important;
-    padding: 6% 0 35px !important;
+    padding: 3% 0px 35px 0px !important;
         background-color: transparent !important;
 }
  
