@@ -43,6 +43,7 @@ function gs_theme_setup() {
 	add_image_size( 'featured-page', 819, 715, FALSE );	
 	add_image_size( 'key-team-members', 238, 329, FALSE );
 	add_image_size( 'archived-projects', 197, 253, true );	
+	add_image_size( 'projects-reel', 850, 509, true );	
 	
 	// Enable Custom Background
 	//add_theme_support( 'custom-background' );
@@ -475,4 +476,52 @@ function generate_archived_projects(){
 	$posts .= '</div><div id="load-more-link"></div>';
 	endif;
 	return $posts;
+}
+
+//General SLIDER FOR PROJECTS
+add_shortcode('projects-slider','generate_projects_slider');
+function generate_projects_slider(){
+    $args = array(
+        'post_type' => 'projects',
+    	'posts_per_page' => 12,
+		'category_name' => 'project-reel');
+    $i = 0;
+    $posts='<div class="featured-projects-slider">
+        <div id="projects-slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">';
+    $query = new WP_Query( $args );
+    if($query->have_posts()):while($query->have_posts()):$query->the_post();
+            $post_id = get_the_ID();
+			$thumb_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'projects-reels', true);
+			$featured_image = '<img src="'.$thumb_url[0].'">';
+            $mycontent = get_the_content();
+			if($i==0){
+				$posts .= '<div class="item active">';
+			}
+			else{
+				$posts .= '<div class="item">';				
+			}
+			$posts .= '
+							<div class="project-wrap clearfix">
+							<div class="pull-right">													
+							<div class="col-md-5"><h2>'.get_the_title($post_id).'</h2><p>'.$mycontent.'</p></div>
+							<div class="col-md-7 no-padding">'.$featured_image.'</div>
+							</div></div>
+					</div>';	
+            $i++;
+        endwhile;
+        wp_reset_postdata();
+    endif;
+    $posts .= ' <div class="clearfix"></div></div>
+    <a class="left carousel-control" href="#projects-slider" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#projects-slider" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+  </div>';
+    return $posts;
 }

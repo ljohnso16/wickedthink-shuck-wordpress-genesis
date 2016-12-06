@@ -215,16 +215,11 @@ div.site-container .site-inner {
 			text-align: right;
 			font-style:italic;
 			padding-bottom: 45px;
+			a {
+    			border-top: 5px solid $maroon;
+    		}
 		}
-		.view-more-link:after {
-			content:''; 
-			width:138px; 
-			height:4px; 
-			background-color:$maroon; 
-			position:absolute; 
-			top:-4px;
-			left: 82%;
-		}
+
 		.project-item{
 			height: 242px;
 		}
@@ -339,7 +334,7 @@ div#static-section-1-area {
 			}
 			.textwidget{
 				text-align: left !important;
-				
+
 			}
 		}
 	}
@@ -431,43 +426,46 @@ div#static-section-1-area {
 		}
 	}
 }
-//* Featured Projects Solil Slider
-.featured-projects-slider  {
-	padding:40px 0px !important;
-	.soliloquy-image {
-	    float: right !important;
-	    margin-left: 100% !important;
-	    width: auto !important;
-	    height: 430px !important;
-	}
-}
-.featured-projects-slider .soliloquy-caption.soliloquy-caption-top{
-	width:55% !important;
-	float:left !important;
-}
 
-.featured-projects-slider .soliloquy-caption .soliloquy-caption-inside{
+.no-padding{
+	padding:0px !important;
+}
+//* Projects Slider on Project Page
+.featured-projects-slider{
+	-webkit-box-shadow: inset 0px 7px 15px -5px rgba(0,0,0,0.3);
+	box-shadow: inset 0px 7px 15px -5px rgba(0,0,0,0.3);     		
+    padding: 5% 0%;
 	background-color:#fff  !important;
-	text-align:justify  !important;
-}
-.featured-projects-slider h2{
-	color:$color-cta !important;
-	text-align: left;
-	@include rem(font-size, 40px!important);
-	font-weight: normal !important;
-	padding: 30px 0px 0px 0px !important;
-	text-transform: capitalize !important;
+	.pull-right{
+		max-width: 79%;
+		float:right !important;
+	}
+	.proj-text{
+		max-width:400px;
+		float:right;
 
-
-}
-.featured-projects-slider .soliloquy-fc-caption{
-    width: 60% !important;
-    float: right !important;
-
-	 p{
+	}
+	.proj-img{
+		max-width:700px;
+		float:right;
+	}
+	.carousel-control {
+	    background: none !important;
+	}
+	h2{
+		color:$color-cta !important;
+		text-align: left;
+		@include rem(font-size, 40px!important);
+		font-weight: normal !important;
+		text-transform: capitalize !important;
+	}
+	p{
  		color:$textColor !important;
  	}
- }
+
+}
+
+
 
 /* Archived Projects */ 
  	div#load-more-link {
