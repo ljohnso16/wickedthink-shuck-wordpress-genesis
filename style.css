@@ -8169,7 +8169,47 @@ button.close {
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  div#j-s-letter-area {
+    background: url("./images/top-left-bldg-plans.jpg") 0px 0px no-repeat, url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat;
+    -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  div#j-s-letter-area {
+    background: url("./images/top-left-bldg-plans.jpg") 0px 0px no-repeat, url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat;
+    -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  div#j-s-letter-area {
+    background: url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat !important;
+    -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  /* Custom, iPhone Retina */
+  div#j-s-letter-area {
+    background: url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat !important;
+    -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  div#j-s-letter-area {
+    background: url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat !important;
+    -webkit-box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0px 7px 15px -5px rgba(0, 0, 0, 0.3);
+  }
+}
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -8671,6 +8711,7 @@ h1.entry-title {
   text-align: right !important;
   border-left: none !important;
   padding: 15px 5px !important;
+  left: -3000px;
 }
 .soliloquy-active-slide .sol-slide-down {
   position: relative !important;
@@ -8685,6 +8726,39 @@ h1.entry-title {
   margin-top: 30px !important;
 }
 .soliloquy-active-slide button.btn.btn-secondary.sol-btn {
+  margin-top: 25px !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: solid white 1px !important;
+  padding: 15px;
+  font-size: 1.3em !important;
+}
+
+/* Home/Animated Variant */
+.home .soliloquy-active-slide .sol-slide-in {
+  position: relative !important;
+  font-size: 2.5em !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: solid white 1px !important;
+  max-width: 60% !important;
+  text-align: right !important;
+  border-left: none !important;
+  padding: 15px 5px !important;
+  left: -3000px;
+}
+.home .soliloquy-active-slide .sol-slide-down {
+  position: relative !important;
+  top: -1000px;
+}
+.home .soliloquy-active-slide .sol-slide-down p {
+  max-width: 40% !important;
+  margin: auto !important;
+  font-size: 1.5em !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  color: #757575 !important;
+  padding: 10px 0px !important;
+  margin-top: 30px !important;
+}
+.home .soliloquy-active-slide button.btn.btn-secondary.sol-btn {
   margin-top: 25px !important;
   background-color: rgba(255, 255, 255, 0.3) !important;
   border: solid white 1px !important;
@@ -8940,7 +9014,7 @@ h1.entry-title {
 
 nav.nav-primary {
   max-width: 586px;
-  float: left;
+  float: right;
   font-size: smaller;
 }
 
@@ -9484,7 +9558,11 @@ div.gform_wrapper form li {
   color: #fff;
 }
 .contact-form-shuck input, .contact-form-shuck textarea {
-  background-color: #D3CFD0;
+  background-color: rgba(7, 0, 0, 0.13) !important;
+  border: transparent !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  border-radius: 0px !important;
 }
 
 body.contact div.site-inner {
@@ -9595,6 +9673,13 @@ div.site-container .site-inner .widget-wrap {
   margin: auto;
   text-align: left;
 }
+.giving-back-page .lower-widget-area div:nth-of-type(2) .content {
+  padding: 0px !important;
+}
+.giving-back-page .lower-widget-area div:nth-of-type(2) .content div img {
+  display: block !important;
+  margin: auto !important;
+}
 
 /*  Featured Projects */
 div#project-carousel {
@@ -9683,6 +9768,10 @@ div#static-section-1-area .area-wrap {
   float: right;
 }
 
+a.toggle-switch.hide {
+  display: inline-block !important;
+}
+
 /* Joyce and Steves Letter */
 div#j-s-letter-area {
   background: url("./images/top-left-bldg-plans.jpg") 0px 0px no-repeat, url("./images/bottom-right-bldg-plans.jpg") 100% 100% no-repeat;
@@ -9692,7 +9781,7 @@ div#j-s-letter-area {
 div#j-s-letter-area .j-s-letter {
   max-width: 980px;
   margin: auto;
-  padding: 400px 0% 0% 13px;
+  padding: 5% 0% 0% 13px;
 }
 div#j-s-letter-area .j-s-letter h4 {
   color: #757575 !important;
@@ -9762,6 +9851,12 @@ div#j-s-letter-area .j-s-letter .textwidget {
   max-width: 900px;
   margin: auto;
 }
+#team-members .row div {
+  text-align: center;
+}
+#team-members .row .team-member a.bio-link {
+  display: inline-block;
+}
 #team-members .row .team-member div {
   text-align: center;
   margin: auto;
@@ -9801,9 +9896,10 @@ div#j-s-letter-area .j-s-letter .textwidget {
   padding: 4px;
 }
 #team-members .row .team-member div.read-bio-container a.read-bio:hover {
-  color: transparent;
+  color: #fff !important;
   border-color: #8b0000;
   background-color: #8b0000;
+  text-decoration: none;
 }
 
 .no-padding {
@@ -9819,6 +9915,7 @@ div#j-s-letter-area .j-s-letter .textwidget {
 .featured-projects-slider .pull-right {
   max-width: 79%;
   float: right !important;
+  max-height: 516px;
 }
 .featured-projects-slider .proj-text {
   max-width: 400px;
@@ -9852,6 +9949,13 @@ div#load-more-link {
 .archived-project {
   margin: 0px 25% 0px 0px;
 }
+.archived-project .border {
+  width: 900px;
+  border: solid 1px #E5EBE6;
+  float: right;
+  margin-top: 5px;
+  margin-bottom: 115px;
+}
 .archived-project div.alignleft {
   max-width: 50%;
   margin-left: 35%;
@@ -9869,19 +9973,42 @@ div#load-more-link {
 .archived-project div.alignright .author {
   font-style: italic;
   width: 20%;
-  border-bottom: 4px solid lightblue;
+  border-bottom: 4px solid #1caee5;
 }
 .archived-project div.alignright .author span {
   text-transform: capitalize;
 }
 .archived-project div.alignright .excerpt {
-  border-bottom: 1px solid #E5EBE6;
-  margin-bottom: 100px;
   margin-top: 15px;
 }
+.archived-project div.alignright .excerpt a.clearfix {
+  text-transform: uppercase;
+  font-size: smaller;
+  font-weight: bold;
+  color: #757575;
+}
+.archived-project div.alignright .excerpt a.clearfix:hover {
+  text-decoration: none;
+}
 
-#loadit {
-  background-color: lightblue !important;
+button#loadit {
+  background-color: #1caee5 !important;
+  color: #fff !important;
+}
+
+button#loadit a:active {
+  background-color: #1caee5 !important;
+  color: #fff !important;
+}
+
+button#loadit a:hover {
+  background-color: #1caee5 !important;
+  color: #fff !important;
+}
+
+button#loadit a:visited {
+  background-color: #1caee5 !important;
+  color: #fff !important;
 }
 
 .soliloquy-container .soliloquy-caption {
@@ -9897,8 +10024,12 @@ div#load-more-link {
   width: 100% !important;
   height: 100% !important;
   text-align: center !important;
-  padding: 3% 0px 35px 0px !important;
+  padding: 5% 0px 35px 0px !important;
   background-color: transparent !important;
+}
+
+.home .soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
+  padding: 8.5% 0px 35px 0px !important;
 }
 
 .soliloquy-container .soliloquy-caption-inside .soliloquy-caption-wrap {

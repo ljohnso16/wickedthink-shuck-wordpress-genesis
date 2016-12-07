@@ -32,14 +32,12 @@ jQuery(document).ready(function($) {
 					// // Add a new placeholder, for when user clicks again.
 					// Update the button message.
 						$('#archived-projects-area').append('<div class="archived-projects-placeholder-'+ pageNum +'"></div>');
-						$('#load-projects button').text('Load More Archived Projects');
+						$('#load-projects button').text('Load More Archived Projects').hide().fadeIn(1000);
 					} else {
-						$('#load-projects button').text('No more Projects.');
+						$('#load-projects button').remove();
 					}
 				}
-			);
-		} else {
-			$('#pbd-alp-load-posts a').append('.');
+			).hide().fadeIn(2000);
 		}	
 		
 		return false;

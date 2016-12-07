@@ -95,6 +95,11 @@
 	}
 }
 
+
+
+
+
+
 .soliloquy-active-slide{
 	.sol-slide-in {
 		position: relative !important;
@@ -105,6 +110,7 @@
 	    text-align: right !important;
 	    border-left: none !important;   
 	    padding: 15px 5px !important; 
+	    left: -3000px;
 	}
 	.sol-slide-down{
 		position: relative !important;
@@ -124,5 +130,42 @@
 	    border: solid rgba(255,255,255,1.0) 1px !important;
 	    padding: 15px;
 	    font-size: 1.3em !important;
+	}
+}
+/* Home/Animated Variant */ 
+.home{
+	.soliloquy-active-slide{
+		.sol-slide-in {
+			position: relative !important;
+		    font-size: 2.5em !important;
+		    background-color: rgba(255, 255, 255, 0.3)!important;
+		    border: solid rgba(255,255,255,1.0) 1px !important;
+		    max-width: 60% !important;
+		    text-align: right !important;
+		    border-left: none !important;   
+		    padding: 15px 5px !important; 
+		    left: -3000px;
+		}
+		.sol-slide-down{
+			position: relative !important;
+			top: -1000px;
+			p {
+			    max-width: 40% !important;
+			    margin: auto !important;
+			    font-size: 1.5em !important;
+			    background-color: rgba(255, 255, 255, 0.6) !important;
+			    color: #757575 !important;
+			    padding: 10px 0px !important;
+			    margin-top: 30px !important;
+
+			}
+		}
+		button.btn.btn-secondary.sol-btn {
+		    margin-top: 25px !important;
+		    background-color: rgba(255, 255, 255, 0.3)!important;
+		    border: solid rgba(255,255,255,1.0) 1px !important;
+		    padding: 15px;
+		    font-size: 1.3em !important;
+		}
 	}
 }

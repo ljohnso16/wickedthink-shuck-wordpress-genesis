@@ -132,7 +132,7 @@ function gs_theme_setup() {
 
 //* Modify the header URL - HTML5 Version
 function child_header_title( $title, $inside, $wrap ) {
-    $inside = sprintf( '<a href="'.home_url('/').'" title="%s"><img alt="" src="' . get_stylesheet_directory_uri() . '/images/logo.png" /></a>', esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
+    $inside = sprintf( '<a href="'.home_url('/').'" title="%s"><img alt="Shuck Communities" src="' . get_stylesheet_directory_uri() . '/images/logo.png" /></a>', esc_attr( get_bloginfo( 'name' ) ), get_bloginfo( 'name' ) );
     return sprintf( '<%1$s class="site-title">%2$s</%1$s>', $wrap, $inside );
 }
 
@@ -313,8 +313,9 @@ function generate_featured_projects(){
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
             $post_id = get_the_ID();
 			$thumb_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'featured-projects', true);
-			$featured_image = '<img src="'.$thumb_url[0].'">';
+			
             $hover_text = types_render_field('hover-text', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
+            $featured_image = '<img src="'.$thumb_url[0].'" alt="'.$hover_text.'">';
             if($i==0){
 				$posts .= '<div class="item active">';
             }
@@ -343,7 +344,7 @@ function generate_featured_projects(){
         endwhile;
         wp_reset_postdata();
     endif;
-    $posts .= '</div><div class="view-more-link"><a href="./featured-projects/">View More</a>';
+    $posts .= '</div><div class="view-more-link"><a href="./featured-projects/">View More</a></div>';
     return $posts;
 }
 //Short code for Learn more link goes to about page//
@@ -386,8 +387,9 @@ function generate_key_team_members_widget(){
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
             $post_id = get_the_ID();		
 			$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post_id), 'key-team-members',true );
-			$featured_image = '<img src="'.$thumbnail[0].'">';
+			
             $member_name = get_the_title($post_id);
+            $featured_image = '<img src="'.$thumbnail[0].'" alt="'.$member_name.'">';
             $position_title = types_render_field('title', array('id' => $post_id, 'show_name' => false, 'output' => 'raw'));
             $bio = get_the_content();
 			if($i==3) {
@@ -398,7 +400,7 @@ function generate_key_team_members_widget(){
 				$posts .= '<div class="one-third team-member">';	
 			}
 			$posts .=
-				'<a href="#" data-toggle="modal" data-target="#bio-0'.$i.'"><div class="pic">'.$featured_image.'</div></a>
+				'<a href="#" data-toggle="modal" class="bio-link" data-target="#bio-0'.$i.'"><div class="pic">'.$featured_image.'</div></a>
 				<div class="name">'.$member_name.'</div>
 				<div class="position-title">'.$position_title.'</div>
 				<div class="read-bio-container"><a href="#" class="read-bio" data-toggle="modal" data-target="#bio-0'.$i.'">Read Bio</a></div>';
@@ -460,7 +462,7 @@ function generate_archived_projects(){
 					<h4 class="widget-title widgettitle">Archived Projects</h4>';
 	if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); // run the loop 
 		$thumb_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'archived-projects', true);
-		$featured_image = '<img src="'.$thumb_url[0].'">';
+		$featured_image = '<img src="'.$thumb_url[0].'" alt="'.get_the_title(get_the_ID()).'">';
 
 		$posts .= '<article class="archived-project">';
 		$posts .= '<div class="alignleft">'.$featured_image.'</div>';
@@ -469,7 +471,7 @@ function generate_archived_projects(){
 		$posts .= '<div class="date">'.get_the_date('F j, Y', get_the_ID()).'</div>';
 		$posts .= '<div class="excerpt">'.get_the_excerpt().'</div>';
 
-		$posts .= '</div><div class="clearfix"></div>';
+		$posts .= '</div><div class="clearfix"></div><div class="border"></div><div class="clearfix"></div>';
 
 		$posts .= '</article>';
 	endwhile;
@@ -493,7 +495,7 @@ function generate_projects_slider(){
     if($query->have_posts()):while($query->have_posts()):$query->the_post();
             $post_id = get_the_ID();
 			$thumb_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'projects-reels', true);
-			$featured_image = '<img src="'.$thumb_url[0].'">';
+			$featured_image = '<img src="'.$thumb_url[0].'" alt="'.get_the_title($post_id).'">';
             $mycontent = get_the_content();
 			if($i==0){
 				$posts .= '<div class="item active">';

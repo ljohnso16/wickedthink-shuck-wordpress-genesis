@@ -31,54 +31,30 @@ $('.project-item').hover(
     );   
 
 
-        var myVar;
-        var countit;
-        countit = 0;
+    var myVar;
+    function myAnimate() {
+        myVar = setInterval(slideit, 1000);
+    }    
+        
+    function slideit() {
+    
 
-        function myAnimate() {
-            myVar = setInterval(slideit, 3500);
-        }    
-            
-        function slideit() {
-            countit++;
-            // if(!!$('#soliloquy-66')){
-               $('.soliloquy-active-slide .sol-slide-in').animate({ left: '+=63%' }, 500, 'swing');               
-             //  $('.soliloquy-active-slide .sol-slide-down').animate({ right: '+=63%' }, 1500, 'swing');               
-            // }
+    
 
-            
-            //this moves the First Div to bounce around
-            $(".soliloquy-active-slide .sol-slide-in").animate({ // Text out
-               left: "-200px"
-            }, 700, function () {
-                $(this).parent().animate({ // Next  Image
-                    
-                }, 500, function () {
-                    $(this).children(".soliloquy-active-slide .sol-slide-in").animate({ // Text in
-                       // opacity: 1,
-                            "left": "-20px"
-                    }, 500);
-                });
-            });
-            //this moves the 2nd Div to bounce around
-            // $(".soliloquy-active-slide .sol-slide-down").animate({ // Text out
-            //    left: "200px"
-            // }, 700, function () {
-            //     $(this).parent().animate({ // Next  Image
-                    
-            //     }, 500, function () {
-            //         $('.soliloquy-active-slide .sol-slide-down').animate({ // Text in
-            //            // opacity: 1,
-            //                 "left": "0px"
-            //         }, 500);
-            //     });
-            // });
-            if(countit<0){
-                clearInterval(interval);
-            }
+        if($('.soliloquy-active-slide .sol-slide-in').position().left != 0){//checks if the css is off screen
+            $('.soliloquy-active-slide .sol-slide-in').animate({ left: '0' }, 500, 'swing');
         }
+        if($('.soliloquy-active-slide .sol-slide-down').position().topy != 0){//checks if the css is off screen
+            $('.soliloquy-active-slide .sol-slide-down').animate({ top: '0' }, 500, 'swing');
+        }
+        
 
-        myAnimate();
+        $('.sol-slide-in').not('.soliloquy-active-slide .sol-slide-in').attr('style', '');
+        $('.sol-slide-down').not('.soliloquy-active-slide .sol-slide-down').attr('style', '');
 
-});
+
+    }
+    myAnimate();
+
+})
 try{Typekit.load({ async: true });}catch(e){}

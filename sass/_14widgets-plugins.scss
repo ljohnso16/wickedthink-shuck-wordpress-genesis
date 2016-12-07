@@ -73,7 +73,11 @@
 		   color: #fff;  
 		}		
 		input, textarea{
-			background-color: $color-secondary;
+			background-color: rgba(7,0,0,0.13) !important;
+			border:transparent !important;
+		    -webkit-border-radius: 0px !important;
+		    -moz-border-radius: 0px !important;
+		    border-radius: 0px !important;
 		}
 	}
 	//background
@@ -172,6 +176,7 @@ div.site-container .site-inner {
 	}
 }
 /* Giving Back Variant */
+
 .giving-back-page div.site-container .site-inner {
 			background-image:none !important;
 }
@@ -191,6 +196,15 @@ div.site-container .site-inner {
 	    max-width: 960px;
 	    margin: auto;
 	    text-align: left;
+	}
+	div:nth-of-type(2){
+		.content{
+			padding:0px !important;
+			div img{
+				display: block !important;
+    			margin: auto !important;
+			}
+		}
 	}
 }
 
@@ -290,7 +304,9 @@ div#static-section-1-area {
 			float: right;
 		}
 }
-
+a.toggle-switch.hide {
+    display: inline-block !important;
+}
 
 /* Joyce and Steves Letter */
 	div#j-s-letter-area {
@@ -303,7 +319,7 @@ div#static-section-1-area {
 		.j-s-letter{
 		    max-width: 980px;
 		    margin: auto;
-			padding: 400px 0% 0% 13px;
+			padding: 5% 0% 0% 13px;
 			h4{
 			    color: $textColor !important;
 			    font-weight: normal;
@@ -365,6 +381,9 @@ div#static-section-1-area {
 
 /*  Key Team Membembers Widget */
 #team-members {
+	.team-member{
+
+	}
 	h4{
 		-webkit-box-shadow: inset 0px 7px 15px -5px rgba(0,0,0,0.3);
 		box-shadow: inset 0px 7px 15px -5px rgba(0,0,0,0.3);  
@@ -378,7 +397,13 @@ div#static-section-1-area {
 	.row {
 	    max-width: 900px;
 	    margin: auto;
+	    div{
+	    	text-align: center;
+	    }
 		.team-member {
+			a.bio-link{
+				display: inline-block;
+			}
 			div{
 				text-align: center;
 				margin: auto;
@@ -418,9 +443,10 @@ div#static-section-1-area {
 				    padding: 4px;
 				}
 				a.read-bio:hover {
-				    color: transparent;
+				    color: #fff !important;
 				    border-color:$maroon;
 				    background-color: $maroon;
+				    text-decoration: none;
 				}				
 			}			
 		}
@@ -439,6 +465,7 @@ div#static-section-1-area {
 	.pull-right{
 		max-width: 79%;
 		float:right !important;
+		max-height:516px;
 	}
 	.proj-text{
 		max-width:400px;
@@ -474,6 +501,13 @@ div#static-section-1-area {
 	}
 
  .archived-project{
+ 	.border{
+	    width: 900px;
+	    border: solid 1px #E5EBE6;
+	    float: right;
+	    margin-top: 5px;
+	    margin-bottom: 115px;
+ 	}
 	margin: 0px 25% 0px 0px;
  	div.alignleft{
  		img{
@@ -493,23 +527,41 @@ div#static-section-1-area {
 		.author{
 			font-style: italic;
     		width: 20%;
-    		border-bottom: 4px solid lightblue;			
+    		border-bottom: 4px solid $babyblue;			
 			span{
 				text-transform: capitalize;
 			}
 		}
 		.excerpt{
-			border-bottom: 1px solid $color-base;
-    		margin-bottom: 100px;
     		margin-top: 15px;
-
+    		a.clearfix {
+			    text-transform: uppercase;
+			    font-size: smaller;
+			    font-weight: bold;
+			    color:$textColor;
+			}
+			a.clearfix:hover {
+				text-decoration: none;
+			}
 		}
  	}
  }
- #loadit{
- 	background-color:lightblue !important;
+ button#loadit{
+ 	background-color:$babyblue !important;
+ 	color:#fff !important;
  }
-
+ button#loadit a:active{
+ 	background-color:$babyblue !important;
+  	color:#fff !important;
+ }
+  button#loadit a:hover{
+ 	background-color:$babyblue !important;
+ 	color:#fff !important;
+ }
+  button#loadit a:visited{
+ 	background-color:$babyblue !important;
+ 	color:#fff !important;
+ }
  .soliloquy-container .soliloquy-caption {
     position: absolute !important;
     display: block !important;
@@ -517,16 +569,20 @@ div#static-section-1-area {
     height: 100% !important;
     z-index: 100 !important;
 }
- 
+
 .soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
     display: table !important;
         width: 100% !important;
         height: 100% !important;
     text-align: center !important;
-    padding: 3% 0px 35px 0px !important;
+    padding: 5% 0px 35px 0px !important;
         background-color: transparent !important;
 }
  
+.home .soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
+    padding: 8.5% 0px 35px 0px !important;
+
+}
 .soliloquy-container .soliloquy-caption-inside .soliloquy-caption-wrap {
         display: table-cell !important;
         vertical-align: middle !important;
