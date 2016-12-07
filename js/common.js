@@ -37,22 +37,16 @@ $('.project-item').hover(
     }    
         
     function slideit() {
-    
-
-    
-
         if($('.soliloquy-active-slide .sol-slide-in').position().left != 0){//checks if the css is off screen
             $('.soliloquy-active-slide .sol-slide-in').animate({ left: '0' }, 500, 'swing');
         }
-        if($('.soliloquy-active-slide .sol-slide-down').position().topy != 0){//checks if the css is off screen
+        if($('.soliloquy-active-slide .sol-slide-down').position().top != 0){//checks if the css is off screen
             $('.soliloquy-active-slide .sol-slide-down').animate({ top: '0' }, 500, 'swing');
         }
         
-
+        //the following statments are mostly giant selectors, (we want to select any NOT active slides) then we just remove any additional styling done above
         $('.sol-slide-in').not('.soliloquy-active-slide .sol-slide-in').attr('style', '');
         $('.sol-slide-down').not('.soliloquy-active-slide .sol-slide-down').attr('style', '');
-
-
     }
     myAnimate();
 

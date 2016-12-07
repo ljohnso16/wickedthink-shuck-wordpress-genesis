@@ -36,6 +36,11 @@
 	}
 /*  CONTACT FORM  */
 	.contact-form-shuck{
+		.input:focus {
+		    outline: none !important;
+		    border:transparent !important;
+		    box-shadow: none !important;
+		}
 		input.gform_button.button {
  		   text-transform: uppercase;
 		} 

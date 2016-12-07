@@ -8711,7 +8711,6 @@ h1.entry-title {
   text-align: right !important;
   border-left: none !important;
   padding: 15px 5px !important;
-  left: -3000px;
 }
 .soliloquy-active-slide .sol-slide-down {
   position: relative !important;
@@ -8733,7 +8732,7 @@ h1.entry-title {
   font-size: 1.3em !important;
 }
 
-/* Home/Animated Variant */
+/* Home/Animated Variant, to make another animated page just add a comma and the page body class name next to home */
 .home .soliloquy-active-slide .sol-slide-in {
   position: relative !important;
   font-size: 2.5em !important;
@@ -9523,6 +9522,11 @@ div.gform_wrapper form li {
 }
 
 /*  CONTACT FORM  */
+.contact-form-shuck .input:focus {
+  outline: none !important;
+  border: transparent !important;
+  box-shadow: none !important;
+}
 .contact-form-shuck input.gform_button.button {
   text-transform: uppercase;
 }

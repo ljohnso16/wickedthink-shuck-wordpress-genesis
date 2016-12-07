@@ -96,10 +96,6 @@
 }
 
 
-
-
-
-
 .soliloquy-active-slide{
 	.sol-slide-in {
 		position: relative !important;
@@ -110,7 +106,6 @@
 	    text-align: right !important;
 	    border-left: none !important;   
 	    padding: 15px 5px !important; 
-	    left: -3000px;
 	}
 	.sol-slide-down{
 		position: relative !important;
@@ -132,7 +127,7 @@
 	    font-size: 1.3em !important;
 	}
 }
-/* Home/Animated Variant */ 
+/* Home/Animated Variant, to make another animated page just add a comma and the page body class name next to home */ 
 .home{
 	.soliloquy-active-slide{
 		.sol-slide-in {
